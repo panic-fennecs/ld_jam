@@ -80,7 +80,7 @@ func _physics_process(delta):
 		motion = velocity.normalized() * c.remainder.dot(velocity.normalized())
 		
 		# check that the resulting velocity is not opposite to the original velocity, which would mean moving backward.
-		if original_vel.dot(velocity) > 0:
+		if original_vel.dot(velocity) > 0.01:
 			c = move_and_collide(motion)
 		else:
 			c = null
