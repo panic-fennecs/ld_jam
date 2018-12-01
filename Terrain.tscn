@@ -314,3 +314,17 @@ position = Vector2( 488.428, -48.4048 )
 [node name="Block86" parent="." instance=ExtResource( 2 )]
 position = Vector2( 286.41, 1439.37 )
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+light_mask = 2
+build_mode = 1
+polygon = PoolVector2Array( 122.088, -79.4111, 122.088, -5.30147, 631.816, -5.30147, 622.63, 364.568, 327.827, 366.457, 325.979, 442.444, 637.994, 439.356, 634.905, 1195.89, 261.105, 1192.8, 258.016, 1279.27, 637.994, 1282.35, 634.905, 1402.78, 10.8751, 1405.87, 7.78577, 772.849, 387.764, 772.849, 387.764, 692.564, 13.9644, 689.476, 13.9644, 260.258, 259.661, 257.882, 259.284, 185.5, 10.738, 186.254, 7.78577, 59.5444, -69.4456, 65.7203, -69.4456, 1467.63, 705.958, 1470.71, 696.69, -76.3232 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+light_mask = 2
+build_mode = 1
+polygon = PoolVector2Array( 125.178, 976.651, 131.356, 1050.76, 520.603, 1047.67, 520.603, 976.651 )
+
