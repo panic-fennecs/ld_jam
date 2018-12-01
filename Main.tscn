@@ -19,7 +19,7 @@ position = Vector2( 35, 0 )
 [node name="Terrain" parent="." instance=ExtResource( 4 )]
 
 [node name="Mob" parent="." instance=ExtResource( 5 )]
-position = Vector2( 251.568, 168.63 )
+position = Vector2( 159.99, 118.037 )
 
 [node name="Camera" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2, 0 )
