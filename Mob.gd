@@ -6,7 +6,6 @@ var velocity = Vector2(0, 0);
 var target_velocity = 0;
 
 var state = State.MOVING;
-var left_counter = 0
 
 const MAX_SPEED = 100;
 const ACCELERATION = 10;
@@ -43,11 +42,7 @@ func _physics_process(delta):
 	if state == State["FALLING"]:
 		_process_falling()
 
-	_adjust_velocity()
-	
-	if is_left_colliding():
-		left_counter += 1
-		print("left_counter: ", left_counter)
+	_adjust_velocity(delta)
 
 	_apply_velocity(delta)
 
@@ -87,13 +82,14 @@ func collides_direction(x):
 			return true
 	return false
 
-func _adjust_velocity():
+func _adjust_velocity(delta):
 	var update = target_velocity - velocity.x
 	update = clamp(update, -ACCELERATION, ACCELERATION)
 	velocity.x += update
 	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 
-	velocity.y = 50
+	velocity.y += 3000 * delta
+	velocity.y *= pow(0.3, delta)
 
 func sacrify():
 	print("sacrify")
