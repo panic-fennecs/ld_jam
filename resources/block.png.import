@@ -2,11 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/block.png-46e1aec43d8bb118118d3d6da24dcee2.stex"
 
 [deps]
 
-source_file="res://icon.png"
+source_file="res://resources/block.png"
+dest_files=[ "res://.import/block.png-46e1aec43d8bb118118d3d6da24dcee2.stex" ]
+
 [params]
 
 compress/mode=0
