@@ -4,6 +4,7 @@ var velocity = Vector2(0, 0)
 var can_jump = true
 var can_dash = true
 var looks_right = true
+var health = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,3 +59,9 @@ func _physics_process(delta):
 			c = move_and_collide(motion)
 		else:
 			c = null
+
+func die():
+	print("you are dead. Too bad.")
+
+func collide_spike():
+	die()
