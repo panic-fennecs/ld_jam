@@ -9,9 +9,9 @@
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
-[node name="Terrain" parent="." instance=ExtResource( 2 )]
+[node name="God" parent="." instance=ExtResource( 2 )]
 
-[node name="God" parent="." instance=ExtResource( 3 )]
+[node name="Terrain" parent="." instance=ExtResource( 3 )]
 
 [node name="Mob" parent="." instance=ExtResource( 4 )]
 position = Vector2( 251.568, 168.63 )
