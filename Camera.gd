@@ -1,24 +1,21 @@
 extends Camera2D
 
-export (int) var speed = 10
-export (int) var magnitute = 10
-
 var absolute_position = Vector2(0, 0)
+var shake_offset = Vector2(0, 0)
 
 func _ready():
 	absolute_position = position
 	var viewport_size = get_viewport().size
 
-
 func _process(delta):
-	var shake_offset = shake()
-	absolute_position.y = get_parent().get_node("Player").position.y - get_viewport().size.y / 2
-	position = absolute_position + shake_offset
+	$FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
 	
-func shake():
-	var time_left = $ShakeTimer.time_left
-	var x = sin(time_left * PI * 2 * speed) * magnitute * time_left
-	return Vector2(x, 0)
+	absolute_position.y = get_parent().get_node("Player").position.y - get_viewport().size.y / 2
+	position = absolute_position
+	position += shake_offset
+
+func offset_position(offset):
+	position += offset
 
 func _on_God_strike():
 	$ShakeTimer.start()

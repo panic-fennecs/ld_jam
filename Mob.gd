@@ -4,13 +4,14 @@ enum State {FALLING, MOVING, CHARGE}
 
 var velocity = Vector2(0, 0);
 var target_velocity = 0;
-
+var charge_cooldown = 0;
 var state = State.MOVING;
 
 const MAX_SPEED = 100;
 const ACCELERATION = 40;
 const CAST_RANGE = 300;
 const CHARGE_VELOCITY = 500;
+const CHARGE_COOLDOWN = 100;
 
 func _process_moving():
 	if target_velocity > 0:
@@ -29,13 +30,19 @@ func _process_moving():
 		$PlayerRayCast.cast_to.x = -CAST_RANGE
 	else:
 		$PlayerRayCast.cast_to.x = CAST_RANGE
+
+	# check charge
 	var collider = $PlayerRayCast.get_collider()
-	if collider and collider.name == "Player":
+	if collider and collider.name == "Player" and charge_cooldown == 0:
 		state = State["CHARGE"]
+		charge_cooldown = CHARGE_COOLDOWN
 		if target_velocity > 0:
 			target_velocity = CHARGE_VELOCITY
 		else:
 			target_velocity = -CHARGE_VELOCITY
+
+	if charge_cooldown > 0:
+		charge_cooldown -= 1
 
 func _process_falling():
 	target_velocity = 0
@@ -45,6 +52,13 @@ func _process_charge():
 		state = State["MOVING"]
 	elif target_velocity < 0 and is_left_colliding():
 		state = State["MOVING"]
+
+	var collider = $PlayerRayCast.get_collider()
+	if collider and collider.name == "Player":
+		var diff = collider.position - position
+		if diff.length() < 70:
+			collider.damage(50)
+			state = State["MOVING"]
 
 func _calculate_state():
 	if is_grounded():
