@@ -14,5 +14,5 @@ func _ready():
 
 
 func _on_DashObject_body_entered(body):
-	if body.has_method("damage"):
+	if body.has_method("damage") and body.name != "Player":
 		body.damage(10)
