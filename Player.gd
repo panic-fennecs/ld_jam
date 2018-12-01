@@ -1,10 +1,15 @@
 extends KinematicBody2D
 
+const MAX_DASH_COUNTER = 0.03
+const DASH_PRELOAD = preload("res://DashObject.tscn")
+
 var velocity = Vector2(0, 0)
 var can_jump = true
 var can_dash = true
 var looks_right = true
 var health = 100
+var dash_counter = 0
+var dash_object = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,18 +23,24 @@ func _physics_process(delta):
 	elif dir == -1:
 		looks_right = false
 	
-	# movement
-	velocity.x += dir * delta * 7000
+	if dash_counter == 0:
+		# movement
+		velocity.x += dir * delta * 7000
+
+		# gravity
+		velocity.y += 3000 * delta
 	
-	# gravity
-	velocity.y += 3000 * delta
+		# drag
+		velocity.x *= pow(0.00002, delta)
+		velocity.y *= pow(0.3, delta)
 	
-	# drag
-	velocity.x *= pow(0.00003, delta)
-	velocity.y *= pow(0.3, delta)
-	
-	try_jump()
-	try_dash()
+		try_jump()
+		try_dash()
+	else:
+		dash_counter -= delta
+		if dash_counter <= 0:
+			dash_counter = 0
+			remove_child(dash_object)
 
 	move_and_slide(velocity)
 	slide_velocity()
@@ -51,9 +62,13 @@ func try_jump():
 
 func try_dash():
 	if Input.is_action_just_pressed("dash") and can_dash:
+		dash_counter = MAX_DASH_COUNTER
 		var dash_dir = (looks_right as int) * 2 - 1
 		velocity.x = dash_dir * 2000
+		velocity.y = 0
 		can_dash = false
+		dash_object = DASH_PRELOAD.instance()
+		add_child(dash_object)
 
 func slide_velocity():
 	for i in range(get_slide_count()):
