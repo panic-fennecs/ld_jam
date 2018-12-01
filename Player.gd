@@ -53,6 +53,11 @@ func _physics_process(delta):
 	var motion = velocity * delta
 	var c = move_and_collide(motion)
 
+	grounded = false
+	lefted = false
+	righted = false
+	ceiled = false
+
 	var did_collide_ground = false
 	var did_collide_left = false
 	var did_collide_right = false
