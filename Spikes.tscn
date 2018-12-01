@@ -1,4 +1,20 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Spikes" type="Node2D"]
+[ext_resource path="res://resources/spikes.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 24.7918, 5.13767 )
+
+[node name="Spikes" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.407554, 4.68452 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.203781, 0.611025 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 1 )
 
