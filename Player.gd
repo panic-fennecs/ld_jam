@@ -13,7 +13,7 @@ var dash_object = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	update_healthbar()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -90,3 +90,10 @@ func die():
 
 func collide_spike():
 	die()
+
+func damage(x):
+	health -= x
+	update_healthbar()
+
+func update_healthbar():
+	get_node("../Camera/Healthbar").text = str(health)
