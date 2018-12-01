@@ -6,6 +6,7 @@ var velocity = Vector2(0, 0);
 var target_velocity = 0;
 
 var state = State.MOVING;
+var left_counter = 0
 
 const MAX_SPEED = 100;
 const ACCELERATION = 10;
@@ -14,12 +15,12 @@ func _process_moving():
 	if target_velocity > 0:
 		if not _right_bot_sensor_colliding():
 			target_velocity = -MAX_SPEED
-		if _right_sensor_colliding():
+		if is_right_colliding():
 			target_velocity = -MAX_SPEED
 	elif target_velocity < 0:
 		if not _left_bot_sensor_colliding():
 			target_velocity = MAX_SPEED
-		if _left_sensor_colliding():
+		if is_left_colliding():
 			target_velocity = MAX_SPEED
 	else:
 		target_velocity = MAX_SPEED
@@ -28,7 +29,7 @@ func _process_falling():
 	target_velocity = 0
 
 func _calculate_state():
-	if _bot_sensor_colliding():
+	if is_grounded():
 		if state == State["FALLING"]:
 			state = State["MOVING"]
 	else:
@@ -43,28 +44,21 @@ func _physics_process(delta):
 		_process_falling()
 
 	_adjust_velocity()
+	
+	if is_left_colliding():
+		left_counter += 1
+		print("left_counter: ", left_counter)
 
 	_apply_velocity(delta)
 
 func _apply_velocity(delta):
-	var original_vel = velocity
-	var motion = velocity * delta
-	var c = move_and_collide(motion)
+	move_and_slide(velocity)
+	slide_velocity()
 
-	while c:
-		if c.remainder.length() == 0:
-			return
-
-		var n = c.normal
-
-		velocity = velocity.slide(n)
-		motion = velocity.normalized() * c.remainder.dot(velocity.normalized())
-
-		# check that the resulting velocity is not opposite to the original velocity, which would mean moving backward.
-		if original_vel.dot(velocity) > 0:
-			c = move_and_collide(motion)
-		else:
-			c = null
+func slide_velocity():
+	for i in range(get_slide_count()):
+		var c = get_slide_collision(i)
+		velocity = velocity.slide(c.normal)
 
 func _turn():
 	target_velocity = -target_velocity
@@ -76,18 +70,22 @@ func _right_bot_sensor_colliding():
 func _left_bot_sensor_colliding():
 	var bodies = $SensorLeftBot.get_overlapping_bodies()
 	return bodies.size() != 0
-	
-func _bot_sensor_colliding():
-	var bodies = $SensorBot.get_overlapping_bodies()
-	return bodies.size() != 0
 
-func _left_sensor_colliding():
-	var bodies = $SensorLeft.get_overlapping_bodies()
-	return bodies.size() != 0
+func is_grounded():
+	return collides_direction(Vector2(0, -1))
 
-func _right_sensor_colliding():
-	var bodies = $SensorRight.get_overlapping_bodies()
-	return bodies.size() != 0
+func is_left_colliding():
+	return collides_direction(Vector2(1, 0))
+
+func is_right_colliding():
+	return collides_direction(Vector2(-1, 0))
+
+func collides_direction(x):
+	for i in range(get_slide_count()):
+		var c = get_slide_collision(i)
+		if (c.normal - x).length() < 0.01:
+			return true
+	return false
 
 func _adjust_velocity():
 	var update = target_velocity - velocity.x
