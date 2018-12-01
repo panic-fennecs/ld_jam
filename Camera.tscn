@@ -11,6 +11,12 @@ script = ExtResource( 1 )
 one_shot = true
 
 [node name="Healthbar" type="Label" parent="."]
+[node name="FpsCounterLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="ThunderCounterLabel" type="Label" parent="."]
+margin_top = 20.0
 margin_right = 40.0
 margin_bottom = 14.0
 
