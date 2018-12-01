@@ -35,7 +35,6 @@ func _calculate_state():
 		state = State["FALLING"];
 
 func _physics_process(delta):
-	print("-")
 	_calculate_state()
 
 	if state == State["MOVING"]:
