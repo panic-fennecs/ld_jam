@@ -9,11 +9,13 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 35, 0 )
+position = Vector2( 138.474, 145.143 )
 
 [node name="God" parent="." instance=ExtResource( 2 )]
 
 [node name="Terrain" parent="." instance=ExtResource( 3 )]
+position = Vector2( 200, 128 )
+width = 10
 
 [node name="Mob" parent="." instance=ExtResource( 4 )]
 position = Vector2( 251.568, 168.63 )
