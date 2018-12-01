@@ -5,6 +5,10 @@ var can_jump = true
 var can_dash = true
 var looks_right = true
 var health = 100
+var grounded = false
+var lefted = false
+var righted = false
+var ceiled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,9 +33,16 @@ func _physics_process(delta):
 	velocity.y *= pow(0.9, delta)
 	
 	# jump
-	if Input.is_action_just_pressed("ui_up") and can_jump:
-		velocity.y = -500
-		can_jump = false
+	if Input.is_action_just_pressed("ui_up"):
+		var will_jump = false
+		if grounded:
+			will_jump = true
+		elif can_jump:
+			will_jump = true
+			can_jump = false
+		if will_jump:
+			velocity.y = -500
+			grounded = false
 	
 	if Input.is_action_just_pressed("dash") and can_dash:
 		var dash_dir = (looks_right as int) * 2 - 1
@@ -41,15 +52,24 @@ func _physics_process(delta):
 	var original_vel = velocity
 	var motion = velocity * delta
 	var c = move_and_collide(motion)
-	
-	while c:
-		can_dash = true
-		can_jump = true
 
+	var did_collide_ground = false
+	var did_collide_left = false
+	var did_collide_right = false
+	var did_collide_ceil = false
+	while c:
 		if c.remainder.length() == 0:
-			return
+			break
 		
 		var n = c.normal
+		if (n - Vector2(0, -1)).length() < 0.01:
+			did_collide_ground = true
+		if (n - Vector2(1, 0)).length() < 0.01:
+			did_collide_left = true
+		if (n - Vector2(-1, 0)).length() < 0.01:
+			did_collide_right = true
+		if (n - Vector2(0, 1)).length() < 0.01:
+			did_collide_ceil = true
 
 		velocity = velocity.slide(n)
 		motion = velocity.normalized() * c.remainder.dot(velocity.normalized())
@@ -59,6 +79,19 @@ func _physics_process(delta):
 			c = move_and_collide(motion)
 		else:
 			c = null
+	if did_collide_ground and !grounded:
+		now_grounded()
+	if did_collide_left and !lefted:
+		lefted = true
+	if did_collide_right and !righted:
+		righted = true
+	if did_collide_ceil and !ceiled:
+		ceiled = true
+
+func now_grounded():
+	grounded = true
+	can_jump = true
+	can_dash = true
 
 func die():
 	print("you are dead. Too bad.")
