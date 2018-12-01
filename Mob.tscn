@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://resources/mob.png" type="Texture" id=2]
@@ -26,6 +26,14 @@ extents = Vector2( 32, 32 )
 
 extents = Vector2( 29.7845, 2.00876 )
 
+[sub_resource type="RectangleShape2D" id=6]
+
+extents = Vector2( 2.33551, 29.0266 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+extents = Vector2( 2.08533, 29.0266 )
+
 [node name="Mob" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -36,16 +44,16 @@ animation = "stay"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[node name="SensorRight" type="Area2D" parent="."]
+[node name="SensorRightBot" type="Area2D" parent="."]
 position = Vector2( 56.2759, 43.1797 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorRight"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorRightBot"]
 position = Vector2( -13.5431, -1.09753 )
 shape = SubResource( 3 )
 
-[node name="SensorLeft" type="Area2D" parent="."]
+[node name="SensorLeftBot" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorLeft"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorLeftBot"]
 position = Vector2( -42.4444, 42.0406 )
 shape = SubResource( 4 )
 
@@ -54,4 +62,16 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SensorBot"]
 position = Vector2( 0.122002, 35.0176 )
 shape = SubResource( 5 )
+
+[node name="SensorLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorLeft"]
+position = Vector2( -36.2771, 0.250061 )
+shape = SubResource( 6 )
+
+[node name="SensorRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorRight"]
+position = Vector2( 35.7767, 7.62939e-06 )
+shape = SubResource( 7 )
 
