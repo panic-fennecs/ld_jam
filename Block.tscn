@@ -4,14 +4,14 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
-extents = Vector2( 10, 9.00639 )
+extents = Vector2( 9.81444, 9.86183 )
 
 [node name="Block" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 3.25, 3.25 )
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
 
