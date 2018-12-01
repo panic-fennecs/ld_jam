@@ -14,5 +14,5 @@
 [node name="God" parent="." instance=ExtResource( 3 )]
 
 [node name="Mob" parent="." instance=ExtResource( 4 )]
-position = Vector2( 251.568, 168.63 )
+position = Vector2( 275.67, 177.664 )
 
