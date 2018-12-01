@@ -47,3 +47,7 @@ shape = SubResource( 3 )
 position = Vector2( -42.4444, 42.0406 )
 shape = SubResource( 4 )
 
+[node name="PlayerRayCast" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
