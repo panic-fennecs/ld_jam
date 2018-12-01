@@ -12,6 +12,8 @@ const ACCELERATION = 40;
 const CAST_RANGE = 300;
 const CHARGE_VELOCITY = 500;
 const CHARGE_COOLDOWN = 100;
+const DAMAGE = 50;
+const DAMAGE_DISTANCE = 70;
 
 func _process_moving():
 	if target_velocity > 0:
@@ -56,8 +58,8 @@ func _process_charge():
 	var collider = $PlayerRayCast.get_collider()
 	if collider and collider.name == "Player":
 		var diff = collider.position - position
-		if diff.length() < 70:
-			collider.damage(50)
+		if diff.length() < DAMAGE_DISTANCE:
+			collider.damage(DAMAGE)
 			state = State["MOVING"]
 
 func _calculate_state():
