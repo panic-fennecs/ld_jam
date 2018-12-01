@@ -9,6 +9,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 35, 0 )
 
 [node name="God" parent="." instance=ExtResource( 2 )]
 
@@ -18,5 +19,6 @@
 position = Vector2( 251.568, 168.63 )
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2, 0 )
 
 [connection signal="strike" from="God" to="Camera" method="_on_God_strike"]
