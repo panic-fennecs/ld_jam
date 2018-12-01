@@ -4,6 +4,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 
+extents = Vector2( 26.2681, 26.7589 )
 
 [node name="DashObject" type="Area2D"]
 script = ExtResource( 1 )

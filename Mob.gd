@@ -14,6 +14,7 @@ const CHARGE_VELOCITY = 500;
 const CHARGE_COOLDOWN = 100;
 const DAMAGE = 50;
 const DAMAGE_DISTANCE = 70;
+const CORPSE_PRELOAD = preload("res://Corpse.tscn");
 
 func _process_moving():
 	if target_velocity > 0:
@@ -130,3 +131,9 @@ func _adjust_velocity(delta):
 
 func sacrify():
 	print("sacrify")
+
+func damage(damage):
+	var corpse = CORPSE_PRELOAD.instance()
+	corpse.position = position
+	get_node("..").add_child(corpse)
+	queue_free()
