@@ -19,14 +19,14 @@ func _physics_process(delta):
 		looks_right = false
 	
 	# movement
-	velocity.x += dir * delta * 3000
+	velocity.x += dir * delta * 7000
 	
 	# gravity
-	velocity.y += 500 * delta
+	velocity.y += 3000 * delta
 	
 	# drag
-	velocity.x *= pow(0.5, delta)
-	velocity.y *= pow(0.9, delta)
+	velocity.x *= pow(0.00003, delta)
+	velocity.y *= pow(0.3, delta)
 	
 	try_jump()
 	try_dash()
@@ -39,7 +39,7 @@ func _physics_process(delta):
 		can_jump = true
 
 func jump():
-	velocity.y = -500
+	velocity.y = -1500
 
 func try_jump():
 	if Input.is_action_just_pressed("ui_up"):
