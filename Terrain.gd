@@ -10,7 +10,7 @@ func _ready():
 	var block_resource = preload("res://Block.tscn")
 	var block = block_resource.instance()
 	#block.Transform.Position = position
-	get_tree().get_root().add_child(block)
+	#get_tree().get_root().add_child(block)
 	
 	pass # Replace with function body.
 
