@@ -129,9 +129,6 @@ func _adjust_velocity(delta):
 	velocity.y += 3000 * delta
 	velocity.y *= pow(0.3, delta)
 
-func sacrify():
-	print("sacrify")
-
 func damage(damage):
 	var corpse = CORPSE_PRELOAD.instance()
 	corpse.position = position

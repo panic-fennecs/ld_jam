@@ -70,7 +70,13 @@ func try_dash():
 
 func try_carry():
 	if Input.is_action_just_pressed("carry"):
-		pass
+		for b in get_node("DashObject").get_overlapping_bodies():
+			if b.name.begins_with("Corpse"):
+				carry = b
+				b.position = Vector2()
+				get_node("/root/Main").remove_child(b)
+				add_child(b)
+				break
 
 func slide_velocity():
 	for i in range(get_slide_count()):
