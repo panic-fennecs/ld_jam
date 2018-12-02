@@ -1,8 +1,44 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Terrain.gd" type="Script" id=1]
 [ext_resource path="res://Block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Spikes.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 34.9686, 708.176 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+extents = Vector2( 288.696, 32.4409 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+extents = Vector2( 128.528, 32.7066 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+extents = Vector2( 0.0639541, 211.572 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+extents = Vector2( 162.191, 32.4542 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+extents = Vector2( 207.707, 34.0052 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+extents = Vector2( 193.098, 33.9724 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+extents = Vector2( 192.886, 33.8459 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+extents = Vector2( 324.656, 34.239 )
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 1 )
@@ -315,16 +351,66 @@ position = Vector2( 488.428, -48.4048 )
 position = Vector2( 286.41, 1439.37 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -32.8382, 766.77 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-light_mask = 2
-build_mode = 1
-polygon = PoolVector2Array( 128.081, -85.4918, 122.088, -5.30147, 642.657, -11.1338, 645.359, 369.124, 327.827, 366.457, 325.979, 442.444, 646.533, 436.645, 646.821, 1199.12, 262.239, 1196.18, 260.79, 1270.34, 645.776, 1267.41, 644.964, 1402.83, 10.8751, 1405.87, 7.78577, 772.849, 387.764, 772.849, 387.764, 692.564, 13.9644, 689.476, 13.9644, 260.258, 259.661, 257.882, 259.284, 185.5, 10.738, 186.254, 7.78577, 59.5444, -69.9843, 57.36, -69.4456, 1467.63, 705.958, 1470.71, 696.69, -76.3232 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0.274246, -0.500549 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 423.084, -49.3076 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-light_mask = 2
-build_mode = 1
-polygon = PoolVector2Array( 125.178, 976.651, 131.356, 1050.76, 520.603, 1047.67, 520.603, 976.651 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 0.903381, 0.229973 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 127.451, 220.084 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 0.391266, -0.405914 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 677.125, 628.67 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 2.39703, 67.8409 )
+scale = Vector2( 531.576, 3.67271 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2( 472.156, 463.02 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( 18.9882, -61.9294 )
+shape = SubResource( 5 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2( 183.178, 738.057 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2( -6.18335, -3.58936 )
+shape = SubResource( 6 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2( 328.425, 1015.85 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2( -1.98907, -0.66272 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2( 455.985, 1233.48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2( 3.05176e-05, -2.20264 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+position = Vector2( 309.547, 1439.44 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2( 14.241, 0.000244141 )
+shape = SubResource( 9 )
 
