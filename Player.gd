@@ -10,11 +10,12 @@ var looks_right = true
 var health = 100
 var dash_counter = 0
 var carry = null
+var anim = "Base"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_healthbar()
-	#$CharacterSprite/AnimationPlayer.play("Move")
+	set_anim("Base")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -27,6 +28,8 @@ func _physics_process(delta):
 	if new_looks_right != looks_right:
 		$CharacterSprite.scale.x *= -1
 		looks_right = new_looks_right
+
+	set_correct_anim(dir)
 	
 	if dash_counter == 0:
 		# movement
@@ -57,6 +60,7 @@ func _physics_process(delta):
 		can_jump = true
 	
 func jump():
+	set_anim(carry_anim("Jump"))
 	velocity.y = -1500
 
 func try_jump():
@@ -88,6 +92,7 @@ func try_carry():
 			carry.velocity = velocity + throwv
 			velocity -= throwv
 			carry = null
+			set_anim(uncarry_anim(anim))
 		else:
 			for b in get_node("DashObject").get_overlapping_bodies():
 				if b.name.begins_with("Corpse"):
@@ -95,6 +100,7 @@ func try_carry():
 					main.remove_child(b)
 					add_child(b)
 					carry.start_carry(self)
+					set_anim(carry_anim(anim))
 					break
 
 func slide_velocity():
@@ -147,3 +153,28 @@ func try_damage(b):
 func _on_DashObject_body_entered(body):
 	try_damage(body)
 
+func set_correct_anim(dir):
+	var carrystr = ""
+	if carry:
+		carrystr = "Carry"
+	var walking = (dash_counter == 0) and dir != 0
+	if walking:
+		set_anim(carrystr + "Move")
+	if dash_counter > 0:
+		set_anim("Dash")
+	if !walking and dash_counter == 0:
+		set_anim(carrystr + "Base")
+
+func carry_anim(x):
+	if x == "Base" or x == "Move" or x == "Throw":
+		return "Carry" + x
+	else:
+		return x
+
+func uncarry_anim(x):
+	return x.trim_prefix("Carry")
+
+func set_anim(x):
+	if x != anim:
+		anim = x
+		$CharacterSprite/AnimationPlayer.play(x)
