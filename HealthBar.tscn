@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/health_bar.png" type="Texture" id=1]
+[ext_resource path="res://resources/thunder_bar_border.png" type="Texture" id=2]
+
+[node name="HealthBar" type="Node2D"]
+
+[node name="MainSprite" type="Sprite" parent="."]
+scale = Vector2( 1, 0.431849 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 160, 40 )
+
+[node name="Border" type="Sprite" parent="."]
+position = Vector2( -0.598351, 5.72205e-06 )
+scale = Vector2( 1.02244, 0.491654 )
+texture = ExtResource( 2 )
+centered = false
+

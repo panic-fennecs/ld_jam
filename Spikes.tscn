@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Spikes.gd" type="Script" id=1]
-[ext_resource path="res://resources/spikes.png" type="Texture" id=2]
+[ext_resource path="res://resources/spike_sprites.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -16,7 +16,8 @@ position = Vector2( 0.407554, 4.68452 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.203781, 0.611025 )
+position = Vector2( 0.465024, -7.83735 )
+scale = Vector2( 0.19609, 0.150008 )
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Spikes_body_entered"]
