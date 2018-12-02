@@ -2,11 +2,12 @@ extends KinematicBody2D
 
 enum State {FALLING, MOVING, CHARGE}
 
-var velocity = Vector2(0, 0);
-var target_velocity = 0;
-var charge_cooldown = 0;
-var state = State.MOVING;
+var velocity = Vector2(0, 0)
+var target_velocity = 0
+var charge_cooldown = 0
+var state = State["MOVING"]
 var dead = false;
+var damaged_in_this_charge = false
 
 const MAX_SPEED = 100;
 const ACCELERATION = 40;
@@ -52,17 +53,16 @@ func _process_falling():
 	target_velocity = 0
 
 func _process_charge():
-	if target_velocity > 0 and is_right_colliding():
-		state = State["MOVING"]
-	elif target_velocity < 0 and is_left_colliding():
-		state = State["MOVING"]
-
 	var collider = $PlayerRayCast.get_collider()
 	if collider and collider.name == "Player":
 		var diff = collider.position - position
-		if diff.length() < DAMAGE_DISTANCE:
+		if diff.length() < DAMAGE_DISTANCE and not damaged_in_this_charge:
 			collider.damage(DAMAGE)
+			damaged_in_this_charge = true
+	else:
+		if (target_velocity > 0 and is_right_colliding()) or (target_velocity < 0 and is_left_colliding()):
 			state = State["MOVING"]
+			damaged_in_this_charge = false
 
 func _calculate_state():
 	if is_grounded():
@@ -135,13 +135,13 @@ func _adjust_velocity(delta):
 	var update = target_velocity - velocity.x
 	update = clamp(update, -ACCELERATION, ACCELERATION)
 	velocity.x += update
-	# velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 
 	velocity.y += 3000 * delta
 	velocity.y *= pow(0.3, delta)
 
 func damage(damage):
-	dead = true
+	if state != State["CHARGE"]:
+		dead = true
 
 func collide_spike():
 	dead = true
