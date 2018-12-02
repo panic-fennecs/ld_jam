@@ -8,28 +8,35 @@ var camera = null
 var shaker_parent = null
 var lightning_hotfix_height = 512
 var position_x = 0
+var position_y = 0
+var size_y = 0
 var lightning_width = 48
 
 func _ready():
 	$Timer.wait_time = fade_in_duration + attack_duration + fade_out_duration
-	$CameraShakeTimer.wait_time = fade_in_duration
-	$CollisionTimer.wait_time = fade_in_duration
+	$DuringAttackTimer.wait_time = fade_in_duration
 	$Timer.start()
-	$CameraShakeTimer.start()
-	$CollisionTimer.start()
+	$DuringAttackTimer.start()
 	
 	var viewport_size = get_viewport().size
 	position_x = randf() * viewport_size.x
 
-	$Line.points[0].x = position_x
-	$Line.points[1].x = position_x
-	$Line.points[1].y = viewport_size.y
+	update_line_position()
 
 func _process(delta):
+	update_line_position()
+	update_line_width()
+
+func update_line_position():
 	var viewport_size = get_viewport().size
-	$Line.points[0].y = camera.position.y - lightning_hotfix_height / 2
-	$Line.points[1].y = camera.position.y + viewport_size.y + lightning_hotfix_height / 2
-	
+	position_y = camera.position.y - lightning_hotfix_height / 2
+	size_y = viewport_size.y + lightning_hotfix_height
+	$Line.points[0].x = position_x
+	$Line.points[1].x = position_x
+	$Line.points[0].y = position_y
+	$Line.points[1].y = position_y + size_y
+
+func update_line_width():
 	var wait_time = $Timer.wait_time
 	var time_left = $Timer.time_left
 	var elapsed = wait_time - time_left
@@ -49,12 +56,6 @@ func _process(delta):
 	
 	$Line.width = width
 
-func set_camera(camera):
-	self.camera = camera
-
-func set_shaker_parent(shaker_parent):
-	self.shaker_parent = shaker_parent
-
 func shake_camera():
 	var CameraShaker = preload("res://CameraShaker.tscn")
 	var camera_shaker = CameraShaker.instance()
@@ -66,18 +67,19 @@ func create_collision():
 	timer.connect("timeout", timer, "queue_free")
 	timer.wait_time = attack_duration
 	
-	var position = camera.position
-	var size = get_viewport().size
-	var area = Area2D.new()
-	var shape = CollisionPolygon2D.new()
-	shape.polygon.push_back(Vector2(0, 0))
-	shape.polygon.push_back(Vector2(0, size.y + lightning_hotfix_height))
-	shape.polygon.push_back(Vector2(lightning_width, size.y + lightning_hotfix_height))
-	shape.polygon.push_back(Vector2(lightning_width, 0))
-	area.position.x = position.x + position_x
-	area.position.y = position.y - lightning_hotfix_height
-	area.add_child(shape)
+	# TODO update positions on camera movement
+	var width = $Line.width
+	var height = size_y
+	var shape = RectangleShape2D.new()
+	shape.extents.x = width
+	shape.extents.y = height
 	
+	var collision_shape = CollisionShape2D.new()
+	collision_shape.shape = shape
+	collision_shape.position = Vector2(position_x - width / 2, position_y)
+	
+	var area = Area2D.new()
+	area.add_child(collision_shape)
 	area.connect("body_entered", self, "deal_damage")
 	
 	timer.add_child(area)
@@ -85,13 +87,18 @@ func create_collision():
 	timer.start()
 
 func deal_damage(body):
-	print(body)
+	if body.name == "Player":
+		get_node("/root/Main/Player").damage(100)
+
+func set_camera(camera):
+	self.camera = camera
+
+func set_shaker_parent(shaker_parent):
+	self.shaker_parent = shaker_parent
 
 func _on_Timer_timeout():
 	queue_free()
 
-func _on_CameraShakeTimer_timeout():
+func _on_DuringAttackTimer_timeout():
 	shake_camera()
-
-func _on_CollisionTimer_timeout():
 	create_collision()

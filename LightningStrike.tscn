@@ -14,12 +14,9 @@ texture_mode = 3080292
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="CameraShakeTimer" type="Timer" parent="."]
-one_shot = true
-
-[node name="CollisionTimer" type="Timer" parent="."]
+[node name="DuringAttackTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="CameraShakeTimer" to="." method="_on_CameraShakeTimer_timeout"]
-[connection signal="timeout" from="CollisionTimer" to="." method="_on_CollisionTimer_timeout"]
+[connection signal="timeout" from="DuringAttackTimer" to="." method="_on_DuringAttackTimer_timeout"]
+[connection signal="timeout" from="DuringAttackTimer" to="." method="_on_CameraShakeTimer_timeout"]
