@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sacrifice.ogg-71163e2db7ce18115d7755f686ab3742.oggstr"
+
+[deps]
+
+source_file="res://audio/sacrifice.ogg"
+dest_files=[ "res://.import/sacrifice.ogg-71163e2db7ce18115d7755f686ab3742.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
