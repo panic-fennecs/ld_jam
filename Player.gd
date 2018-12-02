@@ -102,7 +102,7 @@ func try_carry():
 			set_anim(uncarry_anim(anim))
 		else:
 			for b in get_node("DashObject").get_overlapping_bodies():
-				if b.name.begins_with("Corpse"):
+				if b.name.find("Corpse") != -1:
 					carry = b
 					main.remove_child(b)
 					add_child(b)
