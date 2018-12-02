@@ -93,8 +93,12 @@ func collides_direction(x):
 func is_grounded():
 	return collides_direction(Vector2(0, -1))
 
+func restart():
+	get_tree().change_scene("res://Main.tscn")
+
 func die():
 	print("you are dead. Too bad.")
+	call_deferred("restart")
 
 func collide_spike():
 	die()
