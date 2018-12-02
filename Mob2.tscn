@@ -8,7 +8,7 @@
 
 [sub_resource type="CircleShape2D" id=2]
 
-radius = 30.0
+radius = 150.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 collision_mask = 2

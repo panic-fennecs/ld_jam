@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAX_EXPLOSION_COUNT = 100
+const MAX_EXPLOSION_COUNT = 30
 const CORPSE_PRELOAD = preload("res://Corpse.tscn")
 
 var explosion_countdown = 0
