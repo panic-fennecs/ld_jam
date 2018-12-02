@@ -2,12 +2,13 @@ extends KinematicBody2D
 
 const MAX_DASH_COUNTER = 5
 const THROW_SPEED = 600
+const MAX_HEALTH = 100
 
 var velocity = Vector2(0, 0)
 var can_jump = true
 var can_dash = true
 var looks_right = true
-var health = 100
+var health = MAX_HEALTH
 var dash_counter = 0
 var carry = null
 var anim = "Base"
@@ -129,7 +130,7 @@ func collide_spike():
 	die()
 
 func damage_from_mob1(mob):
-	damage(50)
+	damage(10)
 	velocity = mob.velocity + Vector2(0, -400)
 
 func damage(x):
@@ -141,6 +142,11 @@ func damage(x):
 		die()
 
 func update_healthbar():
+	var perc = float(health) / MAX_HEALTH
+	print("perc: ", perc)
+	print("health: ", health)
+	print("new_size: ", MAX_HEALTH * perc)
+	get_node("HealthBar/MainSprite").region_rect.size.x = 160 * perc
 	get_node("/root/Main/Camera/Healthbar").text = str(health)
 
 func look_direction():
