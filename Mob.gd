@@ -24,10 +24,14 @@ func _process_moving():
 			target_velocity = -MAX_SPEED
 		if is_right_colliding():
 			target_velocity = -MAX_SPEED
+		if _right_spikes_colliding():
+			target_velocity = -MAX_SPEED
 	elif target_velocity < 0:
 		if not _left_bot_sensor_colliding():
 			target_velocity = MAX_SPEED
 		if is_left_colliding():
+			target_velocity = MAX_SPEED
+		if _left_spikes_colliding():
 			target_velocity = MAX_SPEED
 	else:
 		target_velocity = MAX_SPEED
@@ -114,6 +118,20 @@ func _right_bot_sensor_colliding():
 func _left_bot_sensor_colliding():
 	var bodies = $SensorLeftBot.get_overlapping_bodies()
 	return bodies.size() != 0
+
+func _left_spikes_colliding():
+	var areas = $SpikeSensorLeft.get_overlapping_areas()
+	for a in areas:
+		if a.name.begins_with("Spike"):
+			return true
+	return false
+
+func _right_spikes_colliding():
+	var areas = $SpikeSensorRight.get_overlapping_areas()
+	for a in areas:
+		if a.name.begins_with("Spike"):
+			return true
+	return false
 
 func is_grounded():
 	return collides_direction(Vector2(0, -1))
