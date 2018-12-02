@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/thunder_bar.png" type="Texture" id=1]
+[ext_resource path="res://resources/thunder_bar_border.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="Sprite" parent="."]
+position = Vector2( 18.1646, 80.1036 )
+scale = Vector2( 0.97113, 1 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 159.737, 40 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 96.4302, 100.875 )
+scale = Vector2( 1.01122, 1.0299 )
+texture = ExtResource( 2 )
+
