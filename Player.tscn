@@ -27,3 +27,11 @@ frames = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
+[node name="DashObject" type="Area2D" parent="."]
+scale = Vector2( 1, 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DashObject"]
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="DashObject" to="." method="_on_DashObject_body_entered"]
