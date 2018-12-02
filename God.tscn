@@ -6,7 +6,7 @@
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.65
+wait_time = 20.0
 autostart = true
 
 [node name="CameraShakers" type="Node2D" parent="."]
