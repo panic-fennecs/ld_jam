@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://StartScene.gd" type="Script" id=1]
+[ext_resource path="res://resources/rigid/head_rigid.png" type="Texture" id=2]
+[ext_resource path="res://fonts/moinho/moinho_1.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/Jovanny Lemonad - Bender.otf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 96
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+
+emission_shape = 2
+emission_box_extents = Vector3( 300, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 200, 0 )
+initial_velocity_random = 0.38
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 0.5
+color = Color( 0.984314, 0.345098, 0.345098, 1 )
+
+[node name="StartScene" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.451 ],
+"_edit_vertical_guides_": [ 512.302 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -3.0
+margin_top = -1.0
+margin_right = 1026.0
+margin_bottom = 603.0
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 139, 474 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+texture = ExtResource( 2 )
+
+[node name="FixBecauseMaxiCantPaint" type="ColorRect" parent="Node2D"]
+margin_left = 336.0
+margin_top = -287.0
+margin_right = 376.0
+margin_bottom = -247.0
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="Header" type="Label" parent="."]
+margin_left = -3.0
+margin_top = 1.0
+margin_right = 1021.0
+margin_bottom = 242.0
+custom_fonts/font = SubResource( 2 )
+text = "Demon Sacrifice"
+align = 1
+valign = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 663.0
+margin_top = 393.0
+margin_right = 1135.0
+margin_bottom = 602.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "CONTROLS
+ > press WASD to move
+ > kill the angles with your 
+    dash ability
+ > sacrifice them before
+    Cronus strikes you to death
+ > have fun"
+scroll_active = false
+
+[node name="Button" type="Button" parent="."]
+margin_left = 393.0
+margin_top = 271.0
+margin_right = 631.0
+margin_bottom = 332.0
+custom_fonts/font = SubResource( 5 )
+text = "Start"
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 528.5, 143.61 )
+scale = Vector2( 1, 1 )
+amount = 3
+lifetime = 2.0
+speed_scale = 3.0
+process_material = SubResource( 3 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
