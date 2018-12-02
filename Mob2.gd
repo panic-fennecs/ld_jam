@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const MAX_EXPLOSION_COUNT = 30
 const CORPSE_PRELOAD = preload("res://Corpse.tscn")
+const EXPLOSION_PRELOAD = preload("res://Explosion.tscn")
 
 var explosion_countdown = 0
 
@@ -13,6 +14,15 @@ func _physics_process(delta):
 		explosion_countdown += 1
 		if explosion_countdown >= MAX_EXPLOSION_COUNT:
 			damage_aoe()
+			
+			var explosion = EXPLOSION_PRELOAD.instance()
+			explosion.set_position(position)
+			get_node("/root/Main").add_child(explosion)
+			explosion.emitting = true
+			var timer = explosion.get_node("Timer")
+			timer.connect("timeout", explosion, "queue_free")
+			timer.start()
+			
 			var corpse = CORPSE_PRELOAD.instance()
 			corpse.set_position(position)
 			get_node("/root/Main").add_child(corpse)
@@ -23,7 +33,7 @@ func damage_aoe():
 	for b in $Area.get_overlapping_bodies():
 		if b.name == "Player":
 			b.damage(100)
-
+			
 func is_player_close():
 	for b in $Area.get_overlapping_bodies():
 		if b.name == "Player":
