@@ -26,6 +26,7 @@ func _process_moving():
 			target_velocity = -MAX_SPEED
 		if _right_spikes_colliding():
 			target_velocity = -MAX_SPEED
+			print("right spikes")
 	elif target_velocity < 0:
 		if not _left_bot_sensor_colliding():
 			target_velocity = MAX_SPEED
@@ -33,6 +34,7 @@ func _process_moving():
 			target_velocity = MAX_SPEED
 		if _left_spikes_colliding():
 			target_velocity = MAX_SPEED
+			print("left spikes")
 	else:
 		target_velocity = MAX_SPEED
 	if target_velocity < 0:
@@ -66,7 +68,20 @@ func _process_charge():
 	else:
 		if (target_velocity > 0 and is_right_colliding()) or (target_velocity < 0 and is_left_colliding()):
 			state = State["MOVING"]
-			damaged_in_this_charge = false
+	
+	if target_velocity > 0:
+		if _right_spikes_colliding_charge():
+			state = State["MOVING"]
+			target_velocity = -MAX_SPEED
+			print("turn left")
+	if target_velocity < 0:
+		if _left_spikes_colliding_charge():
+			state = State["MOVING"]
+			target_velocity = MAX_SPEED
+			print("turn right")
+			
+	if state == State["MOVING"]:
+		damaged_in_this_charge = false
 
 func _calculate_state():
 	if is_grounded():
@@ -90,10 +105,12 @@ func _physics_process(delta):
 
 	if state == State["MOVING"]:
 		_process_moving()
-	if state == State["FALLING"]:
+	elif state == State["FALLING"]:
 		_process_falling()
-	if state == State["CHARGE"]:
+	elif state == State["CHARGE"]:
 		_process_charge()
+
+	print("target_velocity: ", target_velocity)
 
 	_adjust_velocity(delta)
 
@@ -120,14 +137,19 @@ func _left_bot_sensor_colliding():
 	return bodies.size() != 0
 
 func _left_spikes_colliding():
-	var areas = $SpikeSensorLeft.get_overlapping_areas()
-	for a in areas:
-		if a.name.begins_with("Spike"):
-			return true
-	return false
+	return _collides_spikes($SpikeSensorLeft)
 
 func _right_spikes_colliding():
-	var areas = $SpikeSensorRight.get_overlapping_areas()
+	return _collides_spikes($SpikeSensorRight)
+
+func _right_spikes_colliding_charge():
+	return _collides_spikes($SpikeSensorRightCharge)
+
+func _left_spikes_colliding_charge():
+	return _collides_spikes($SpikeSensorLeftCharge)
+	
+func _collides_spikes(sensor):
+	var areas = sensor.get_overlapping_areas()
 	for a in areas:
 		if a.name.begins_with("Spike"):
 			return true
