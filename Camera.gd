@@ -19,7 +19,6 @@ func offset_position(offset):
 
 func _on_God_strike():
 	$ShakeTimer.start()
-	print("thunder")
 
 func _on_ShakeTimer_timeout():
 	position.x = 0

@@ -45,6 +45,5 @@ func throw(b):
 
 func sacrify():
 	dead = true
-	var x = get_node("/root/Main")
-	var god = x.get_node("God")
-	god._settle()
+	get_node("/root/Main/God")._settle()
+	get_node("/root/Main/Player").carry = null
