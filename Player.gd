@@ -21,7 +21,7 @@ var last_look_dir = DIRECTION.right
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_healthbar()
-	$AnimationPlayer.play("Move")
+	$CharacterSprite/AnimationPlayer.play("Move")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
