@@ -101,10 +101,14 @@ func collide_spike():
 
 func damage(x):
 	health -= x
+	if health <= 0:
+		health = 0
 	update_healthbar()
+	if health == 0:
+		die()
 
 func update_healthbar():
-	get_node("../Camera/Healthbar").text = str(health)
+	get_node("/root/Main/Camera/Healthbar").text = str(health)
 
 
 func _on_DashObject_body_entered(body):
