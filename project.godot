@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 AudioplayerSingleton="*res://AudioPlayer.gd"
 AudioPlayerScene="*res://AudioPlayer.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 ui_left={
