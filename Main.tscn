@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://God.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Camera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Altar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Terrain.tscn" type="PackedScene" id=6]
+[ext_resource path="res://AudioPlayer.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 
@@ -15,7 +16,7 @@ position = Vector2( 260.094, 58.1386 )
 [node name="God" parent="." instance=ExtResource( 2 )]
 
 [node name="Mob" parent="." instance=ExtResource( 3 )]
-position = Vector2( 265.26, 1321.67 )
+position = Vector2( 372.925, 953.254 )
 
 [node name="Camera" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2, 0 )
@@ -25,5 +26,7 @@ position = Vector2( 360.299, 768.355 )
 
 [node name="Terrain" parent="." instance=ExtResource( 6 )]
 position = Vector2( 180, 100 )
+
+[node name="AudioPlayer" parent="." instance=ExtResource( 7 )]
 
 [connection signal="strike" from="God" to="Camera" method="_on_God_strike"]

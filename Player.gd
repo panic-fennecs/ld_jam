@@ -3,6 +3,11 @@ extends KinematicBody2D
 const MAX_DASH_COUNTER = 5
 const THROW_SPEED = 600
 
+enum DIRECTION {
+	left = -1,
+	right = 1
+}
+
 var velocity = Vector2(0, 0)
 var can_jump = true
 var can_dash = true
@@ -10,18 +15,21 @@ var looks_right = true
 var health = 100
 var dash_counter = 0
 var carry = null
+var look_dir = DIRECTION.right
+var last_look_dir = DIRECTION.right 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	update_healthbar()
+	$AnimationPlayer.play("Move")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	var dir = (Input.is_action_pressed("ui_right") as int) - (Input.is_action_pressed("ui_left") as int)
 	if dir == 1:
-		looks_right = true
+		look_dir = DIRECTION.right
 	elif dir == -1:
-		looks_right = false
+		look_dir = DIRECTION.left
 	
 	if dash_counter == 0:
 		# movement
@@ -50,7 +58,12 @@ func _physics_process(delta):
 	if is_grounded():
 		can_dash = true
 		can_jump = true
-
+	
+	if last_look_dir != look_dir:
+		$CharacterSprite.scale.x *= -1
+	
+	last_look_dir = look_dir
+	
 func jump():
 	velocity.y = -1500
 
@@ -133,7 +146,7 @@ func update_healthbar():
 	get_node("/root/Main/Camera/Healthbar").text = str(health)
 
 func look_direction():
-	return (looks_right as int) * 2 - 1
+	return (look_dir as int) * 2 - 1
 
 func try_damage(b):
 	if b.has_method("damage") and b.name != "Player" and dash_counter > 0:
