@@ -21,7 +21,6 @@ position = Vector2( 372.925, 953.254 )
 
 [node name="Mob2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 250, 700 )
-scale = Vector2( 1, 1 )
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2, 0 )
