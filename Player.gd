@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const MAX_DASH_COUNTER = 0.03
+const THROW_SPEED = 600
 
 enum DIRECTION {
 	left = -1,
@@ -76,20 +77,30 @@ func try_jump():
 func try_dash():
 	if Input.is_action_just_pressed("dash") and can_dash:
 		dash_counter = MAX_DASH_COUNTER
-		var dash_dir = (look_dir as int) * 2 - 1
+		var dash_dir = look_direction()
 		velocity.x = dash_dir * 2000
 		velocity.y = 0
 		can_dash = false
 
 func try_carry():
 	if Input.is_action_just_pressed("carry"):
-		for b in get_node("DashObject").get_overlapping_bodies():
-			if b.name.begins_with("Corpse"):
-				carry = b
-				b.position = Vector2()
-				get_node("/root/Main").remove_child(b)
-				add_child(b)
-				break
+		var main = get_node("/root/Main")
+		if carry:
+			remove_child(carry)
+			main.add_child(carry)
+			carry.throw(self)
+			var throwv = Vector2(look_direction() * THROW_SPEED, 0)
+			carry.velocity = velocity + throwv
+			velocity -= throwv
+			carry = null
+		else:
+			for b in get_node("DashObject").get_overlapping_bodies():
+				if b.name.begins_with("Corpse"):
+					carry = b
+					main.remove_child(b)
+					add_child(b)
+					carry.start_carry(self)
+					break
 
 func slide_velocity():
 	for i in range(get_slide_count()):
@@ -106,11 +117,19 @@ func collides_direction(x):
 func is_grounded():
 	return collides_direction(Vector2(0, -1))
 
+func restart():
+	get_tree().change_scene("res://Main.tscn")
+
 func die():
 	print("you are dead. Too bad.")
+	call_deferred("restart")
 
 func collide_spike():
 	die()
+
+func damage_from_mob1(mob):
+	damage(50)
+	velocity = mob.velocity + Vector2(0, -400)
 
 func damage(x):
 	health -= x
@@ -123,6 +142,8 @@ func damage(x):
 func update_healthbar():
 	get_node("/root/Main/Camera/Healthbar").text = str(health)
 
+func look_direction():
+	return (look_dir as int) * 2 - 1
 
 func _on_DashObject_body_entered(body):
 	if body.has_method("damage") and body.name != "Player" and dash_counter > 0:

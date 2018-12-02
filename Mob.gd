@@ -2,11 +2,12 @@ extends KinematicBody2D
 
 enum State {FALLING, MOVING, CHARGE}
 
-var velocity = Vector2(0, 0);
-var target_velocity = 0;
-var charge_cooldown = 0;
-var state = State.MOVING;
+var velocity = Vector2(0, 0)
+var target_velocity = 0
+var charge_cooldown = 0
+var state = State["MOVING"]
 var dead = false;
+var damaged_in_this_charge = false
 
 const MAX_SPEED = 100;
 const ACCELERATION = 40;
@@ -23,10 +24,14 @@ func _process_moving():
 			target_velocity = -MAX_SPEED
 		if is_right_colliding():
 			target_velocity = -MAX_SPEED
+		if _right_spikes_colliding():
+			target_velocity = -MAX_SPEED
 	elif target_velocity < 0:
 		if not _left_bot_sensor_colliding():
 			target_velocity = MAX_SPEED
 		if is_left_colliding():
+			target_velocity = MAX_SPEED
+		if _left_spikes_colliding():
 			target_velocity = MAX_SPEED
 	else:
 		target_velocity = MAX_SPEED
@@ -52,17 +57,27 @@ func _process_falling():
 	target_velocity = 0
 
 func _process_charge():
-	if target_velocity > 0 and is_right_colliding():
-		state = State["MOVING"]
-	elif target_velocity < 0 and is_left_colliding():
-		state = State["MOVING"]
-
 	var collider = $PlayerRayCast.get_collider()
 	if collider and collider.name == "Player":
 		var diff = collider.position - position
-		if diff.length() < DAMAGE_DISTANCE:
-			collider.damage(DAMAGE)
+		if diff.length() < DAMAGE_DISTANCE and not damaged_in_this_charge:
+			collider.damage_from_mob1(self)
+			damaged_in_this_charge = true
+	else:
+		if (target_velocity > 0 and is_right_colliding()) or (target_velocity < 0 and is_left_colliding()):
 			state = State["MOVING"]
+	
+	if target_velocity > 0:
+		if _right_spikes_colliding_charge():
+			state = State["MOVING"]
+			target_velocity = -MAX_SPEED
+	if target_velocity < 0:
+		if _left_spikes_colliding_charge():
+			state = State["MOVING"]
+			target_velocity = MAX_SPEED
+
+	if state == State["MOVING"]:
+		damaged_in_this_charge = false
 
 func _calculate_state():
 	if is_grounded():
@@ -86,9 +101,9 @@ func _physics_process(delta):
 
 	if state == State["MOVING"]:
 		_process_moving()
-	if state == State["FALLING"]:
+	elif state == State["FALLING"]:
 		_process_falling()
-	if state == State["CHARGE"]:
+	elif state == State["CHARGE"]:
 		_process_charge()
 
 	_adjust_velocity(delta)
@@ -115,6 +130,25 @@ func _left_bot_sensor_colliding():
 	var bodies = $SensorLeftBot.get_overlapping_bodies()
 	return bodies.size() != 0
 
+func _left_spikes_colliding():
+	return _collides_spikes($SpikeSensorLeft)
+
+func _right_spikes_colliding():
+	return _collides_spikes($SpikeSensorRight)
+
+func _right_spikes_colliding_charge():
+	return _collides_spikes($SpikeSensorRightCharge)
+
+func _left_spikes_colliding_charge():
+	return _collides_spikes($SpikeSensorLeftCharge)
+	
+func _collides_spikes(sensor):
+	var areas = sensor.get_overlapping_areas()
+	for a in areas:
+		if a.name.begins_with("Spike"):
+			return true
+	return false
+
 func is_grounded():
 	return collides_direction(Vector2(0, -1))
 
@@ -135,13 +169,13 @@ func _adjust_velocity(delta):
 	var update = target_velocity - velocity.x
 	update = clamp(update, -ACCELERATION, ACCELERATION)
 	velocity.x += update
-	# velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 
 	velocity.y += 3000 * delta
 	velocity.y *= pow(0.3, delta)
 
 func damage(damage):
-	dead = true
+	if state != State["CHARGE"]:
+		dead = true
 
 func collide_spike():
 	dead = true

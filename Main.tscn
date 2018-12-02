@@ -15,7 +15,7 @@ position = Vector2( 260.094, 58.1386 )
 [node name="God" parent="." instance=ExtResource( 2 )]
 
 [node name="Mob" parent="." instance=ExtResource( 3 )]
-position = Vector2( 251.568, 168.63 )
+position = Vector2( 372.925, 953.254 )
 
 [node name="Camera" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2, 0 )

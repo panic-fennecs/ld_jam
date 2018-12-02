@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
 [ext_resource path="res://resources/mob.png" type="Texture" id=2]
@@ -21,6 +21,22 @@ extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
+
+[sub_resource type="RectangleShape2D" id=5]
+
+extents = Vector2( 5.11113, 10 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+extents = Vector2( 5.11115, 10 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+extents = Vector2( 30.2422, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+extents = Vector2( 30.2427, 10 )
 
 [node name="Mob" type="KinematicBody2D"]
 collision_mask = 2
@@ -50,4 +66,32 @@ shape = SubResource( 4 )
 [node name="PlayerRayCast" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 300, 0 )
+
+[node name="SpikeSensorRight" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeSensorRight"]
+position = Vector2( 41.885, 21.53 )
+shape = SubResource( 5 )
+
+[node name="SpikeSensorLeft" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeSensorLeft"]
+position = Vector2( -41.8854, 20.932 )
+shape = SubResource( 6 )
+
+[node name="SpikeSensorRightCharge" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeSensorRightCharge"]
+position = Vector2( 65.8196, 20.9319 )
+shape = SubResource( 7 )
+
+[node name="SpikeSensorLeftCharge" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeSensorLeftCharge"]
+position = Vector2( -65.82, 21.53 )
+shape = SubResource( 8 )
 
