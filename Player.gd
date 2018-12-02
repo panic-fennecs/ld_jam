@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const MAX_DASH_COUNTER = 5
-const THROW_SPEED = 600
+const THROW_SPEED = 1300
 const MAX_HEALTH = 100
 
 var velocity = Vector2(0, 0)
@@ -68,9 +68,12 @@ func try_jump():
 	if Input.is_action_just_pressed("ui_up"):
 		if is_grounded():
 			jump()
+			AudioPlayerScene.play_jump_sound()
 		elif can_jump:
 			jump()
 			can_jump = false
+			AudioPlayerScene.play_doublejump_sound()
+
 
 func try_dash():
 	if Input.is_action_just_pressed("dash") and can_dash:
@@ -81,6 +84,7 @@ func try_dash():
 		can_dash = false
 		for b in $DashObject.get_overlapping_bodies():
 			try_damage(b)
+		AudioPlayerScene.play_dash_sound()
 
 func try_carry():
 	if Input.is_action_just_pressed("carry"):
@@ -90,8 +94,10 @@ func try_carry():
 			main.add_child(carry)
 			carry.throw(self)
 			var throwv = Vector2(look_direction() * THROW_SPEED, 0)
+			
 			carry.velocity = velocity + throwv
-			velocity -= throwv
+			if !is_grounded():
+				velocity -= throwv
 			carry = null
 			set_anim(uncarry_anim(anim))
 		else:
@@ -123,7 +129,7 @@ func restart():
 	get_tree().change_scene("res://Main.tscn")
 
 func die():
-	print("you are dead. Too bad.")
+	AudioPlayerScene.play_dying_sound()
 	call_deferred("restart")
 
 func collide_spike():

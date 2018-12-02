@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 var enemyDying = preload("res://audio/bumm.ogg")
 var lightningStrike = preload("res://audio/bumm.ogg")

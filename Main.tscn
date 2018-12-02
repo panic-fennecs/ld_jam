@@ -9,7 +9,6 @@
 [node name="Main" type="Node2D"]
 
 [node name="Terrain" parent="." instance=ExtResource( 1 )]
-scale = Vector2( 1, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 141.897, 208.154 )

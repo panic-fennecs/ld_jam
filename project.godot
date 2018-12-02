@@ -16,13 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="LD_Jam"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://StartScene.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 AudioplayerSingleton="*res://AudioPlayer.gd"
 AudioPlayerScene="*res://AudioPlayer.tscn"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 
