@@ -74,7 +74,7 @@ func _calculate_state():
 func die():
 	var corpse = CORPSE_PRELOAD.instance()
 	corpse.set_position(position)
-	get_node("..").add_child(corpse)
+	get_node("/root/Main").add_child(corpse)
 	queue_free()
 
 func _physics_process(delta):
@@ -141,4 +141,7 @@ func _adjust_velocity(delta):
 	velocity.y *= pow(0.3, delta)
 
 func damage(damage):
+	dead = true
+
+func collide_spike():
 	dead = true
