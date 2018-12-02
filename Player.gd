@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 const MAX_DASH_COUNTER = 5
-const THROW_SPEED = 600
+const THROW_SPEED = 1300
 const MAX_HEALTH = 100
 
 var velocity = Vector2(0, 0)
@@ -90,8 +90,10 @@ func try_carry():
 			main.add_child(carry)
 			carry.throw(self)
 			var throwv = Vector2(look_direction() * THROW_SPEED, 0)
+			
 			carry.velocity = velocity + throwv
-			velocity -= throwv
+			if !is_grounded():
+				velocity -= throwv
 			carry = null
 			set_anim(uncarry_anim(anim))
 		else:
