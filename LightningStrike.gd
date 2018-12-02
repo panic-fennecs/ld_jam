@@ -102,3 +102,6 @@ func _on_Timer_timeout():
 func _on_DuringAttackTimer_timeout():
 	shake_camera()
 	create_collision()
+	
+func lightningSound():
+	AudioPlayerScene.playLightningSound()
