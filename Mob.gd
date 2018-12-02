@@ -6,6 +6,7 @@ var velocity = Vector2(0, 0);
 var target_velocity = 0;
 var charge_cooldown = 0;
 var state = State.MOVING;
+var dead = false;
 
 const MAX_SPEED = 100;
 const ACCELERATION = 40;
@@ -14,7 +15,7 @@ const CHARGE_VELOCITY = 500;
 const CHARGE_COOLDOWN = 100;
 const DAMAGE = 50;
 const DAMAGE_DISTANCE = 70;
-const CORPSE_PRELOAD = preload("res://Corpse.tscn");
+const CORPSE_PRELOAD = preload("res://Corpse.tscn")
 
 func _process_moving():
 	if target_velocity > 0:
@@ -70,7 +71,17 @@ func _calculate_state():
 	else:
 		state = State["FALLING"];
 
+func die():
+	var corpse = CORPSE_PRELOAD.instance()
+	corpse.set_position(position)
+	get_node("..").add_child(corpse)
+	queue_free()
+
 func _physics_process(delta):
+	if dead:
+		die()
+		return
+
 	_calculate_state()
 
 	if state == State["MOVING"]:
@@ -133,7 +144,4 @@ func sacrify():
 	print("sacrify")
 
 func damage(damage):
-	var corpse = CORPSE_PRELOAD.instance()
-	corpse.position = position
-	get_node("..").add_child(corpse)
-	queue_free()
+	dead = true
