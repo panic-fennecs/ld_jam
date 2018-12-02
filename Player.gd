@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAX_DASH_COUNTER = 0.03
+const MAX_DASH_COUNTER = 5
 const THROW_SPEED = 600
 
 var velocity = Vector2(0, 0)
@@ -37,9 +37,10 @@ func _physics_process(delta):
 		try_jump()
 		try_dash()
 	else:
-		dash_counter -= delta
+		dash_counter -= 1
 		if dash_counter <= 0:
 			dash_counter = 0
+			velocity.x = 0
 	
 	try_carry()
 
@@ -68,6 +69,8 @@ func try_dash():
 		velocity.x = dash_dir * 2000
 		velocity.y = 0
 		can_dash = false
+		for b in $DashObject.get_overlapping_bodies():
+			try_damage(b)
 
 func try_carry():
 	if Input.is_action_just_pressed("carry"):
@@ -132,6 +135,10 @@ func update_healthbar():
 func look_direction():
 	return (looks_right as int) * 2 - 1
 
+func try_damage(b):
+	if b.has_method("damage") and b.name != "Player" and dash_counter > 0:
+		b.damage(10)
+
 func _on_DashObject_body_entered(body):
-	if body.has_method("damage") and body.name != "Player" and dash_counter > 0:
-		body.damage(10)
+	try_damage(body)
+
