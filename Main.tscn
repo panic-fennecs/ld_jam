@@ -12,7 +12,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 260.094, 58.1386 )
+position = Vector2( 276.992, 58.1386 )
 
 [node name="God" parent="." instance=ExtResource( 2 )]
 

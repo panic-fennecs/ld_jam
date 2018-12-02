@@ -5,28 +5,29 @@
 [ext_resource path="res://fonts/moinho/moinho_1.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://fonts/Jovanny Lemonad - Bender.otf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 96
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 
 size = 24
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 
 size = 24
 font_data = ExtResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=4]
 
 emission_shape = 2
 emission_box_extents = Vector3( 300, 1, 1 )
 flag_disable_z = true
 gravity = Vector3( 0, 200, 0 )
 initial_velocity_random = 0.38
+angular_velocity = 1.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale = 10.0
@@ -66,7 +67,7 @@ margin_left = -3.0
 margin_top = 1.0
 margin_right = 1021.0
 margin_bottom = 242.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Demon Sacrifice"
 align = 1
 valign = 1
@@ -76,11 +77,11 @@ margin_left = 663.0
 margin_top = 393.0
 margin_right = 1135.0
 margin_bottom = 602.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "CONTROLS
  > press WASD to move
- > kill the angles with your 
+ > kill the angels with your 
     dash ability
  > sacrifice them before
     Cronus strikes you to death
@@ -92,15 +93,14 @@ margin_left = 393.0
 margin_top = 271.0
 margin_right = 631.0
 margin_bottom = 332.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 text = "Start"
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 528.5, 143.61 )
-scale = Vector2( 1, 1 )
 amount = 3
 lifetime = 2.0
 speed_scale = 3.0
-process_material = SubResource( 3 )
+process_material = SubResource( 4 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
