@@ -100,6 +100,7 @@ func _on_Timer_timeout():
 	queue_free()
 
 func _on_DuringAttackTimer_timeout():
+	lightningSound()
 	shake_camera()
 	create_collision()
 	
