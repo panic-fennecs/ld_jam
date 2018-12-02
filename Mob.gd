@@ -57,7 +57,7 @@ func _process_charge():
 	if collider and collider.name == "Player":
 		var diff = collider.position - position
 		if diff.length() < DAMAGE_DISTANCE and not damaged_in_this_charge:
-			collider.damage(DAMAGE)
+			collider.damage_from_mob1(self)
 			damaged_in_this_charge = true
 	else:
 		if (target_velocity > 0 and is_right_colliding()) or (target_velocity < 0 and is_left_colliding()):

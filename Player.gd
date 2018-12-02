@@ -114,6 +114,10 @@ func die():
 func collide_spike():
 	die()
 
+func damage_from_mob1(mob):
+	damage(50)
+	velocity = mob.velocity + Vector2(0, -400)
+
 func damage(x):
 	health -= x
 	if health <= 0:
