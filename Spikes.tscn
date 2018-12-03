@@ -18,6 +18,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.465024, -7.83735 )
 scale = Vector2( 0.19609, 0.150008 )
+z_index = -10
 texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_Spikes_body_entered"]

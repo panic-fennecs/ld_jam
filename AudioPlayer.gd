@@ -8,6 +8,7 @@ var jump = preload("res://audio/jump.ogg")
 var doublejump = preload("res://audio/double_jump.ogg")
 var game_over = preload("res://audio/game_over.ogg")
 var sacrifice = preload("res://audio/sacrifice.ogg")
+var background = preload("res://audio/background_music.ogg")
 
 func _ready():
 	pass
