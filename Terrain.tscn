@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Terrain.gd" type="Script" id=1]
 [ext_resource path="res://Block.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Altar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Finish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mob2.tscn" type="PackedScene" id=7]
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 1 )
@@ -266,4 +267,7 @@ position = Vector2( 870.019, 3225.07 )
 
 [node name="Finish" parent="." instance=ExtResource( 6 )]
 position = Vector2( 558.836, 3796.81 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 420, 70 )
 
