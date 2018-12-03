@@ -10,8 +10,6 @@ func _ready():
 	camera = get_parent().get_node("Camera")
 
 func _process(delta):
-	camera.get_node("ThunderCounterLabel").text = str(ceil($Timer.time_left * 10) / 10) + " s"
-
 	var perc = 1 - ($Timer.time_left / $Timer.wait_time)
 	camera.get_node("ThunderBar/AnimatedSprite").region_rect.size.x = MAX_THUNDER_BAR_SIZE * perc
 
