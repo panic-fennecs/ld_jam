@@ -3,13 +3,13 @@ extends Camera2D
 var absolute_position = Vector2(0, 0)
 var shake_offset = Vector2(0, 0)
 var global_state
-var cam_center
+var current_position
 
 func _ready():
 	global_state = get_node("/root/GlobalState")
 	absolute_position = position
 	var viewport_size = get_viewport().size
-	cam_center = get_parent().get_node("Player").position
+	current_position = get_parent().get_node("Player").position
 
 func _process(delta):
 	$FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
@@ -17,9 +17,11 @@ func _process(delta):
 	$DeathLabel.text = str(global_state.death_count) + " deaths"
 	absolute_position.y = get_parent().get_node("Player").position.y - get_viewport().size.y / 2
 	absolute_position.x = get_parent().get_node("Player").position.x - get_viewport().size.x / 2
-	
-	# var acc = absolute_position - cam_center
-	position = absolute_position
+
+	var acc = absolute_position - current_position
+	current_position += acc * 0.2
+
+	position = current_position
 	position += shake_offset
 
 func offset_position(offset):
