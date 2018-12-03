@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Terrain.gd" type="Script" id=1]
 [ext_resource path="res://Block.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Spikes.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Altar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Finish.tscn" type="PackedScene" id=6]
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 1 )
@@ -39,6 +40,14 @@ scale = Vector2( 7.15615, 0.960047 )
 
 [node name="Block43" parent="." instance=ExtResource( 2 )]
 position = Vector2( 366.362, 3590.41 )
+scale = Vector2( 7.15615, 0.960047 )
+
+[node name="Block45" parent="." instance=ExtResource( 2 )]
+position = Vector2( 284.618, 3869.56 )
+scale = Vector2( 7.15615, 0.960047 )
+
+[node name="Block47" parent="." instance=ExtResource( 2 )]
+position = Vector2( 731.937, 3869.56 )
 scale = Vector2( 7.15615, 0.960047 )
 
 [node name="Block39" parent="." instance=ExtResource( 2 )]
@@ -113,13 +122,17 @@ scale = Vector2( 1, 22.975 )
 position = Vector2( 985.388, 2954.74 )
 scale = Vector2( 1, 22.975 )
 
+[node name="Block46" parent="." instance=ExtResource( 2 )]
+position = Vector2( 987.2, 3798.99 )
+scale = Vector2( 1, 3.47718 )
+
 [node name="Block28" parent="." instance=ExtResource( 2 )]
 position = Vector2( 31.7136, 2276.28 )
 scale = Vector2( 1, 22.975 )
 
 [node name="Block44" parent="." instance=ExtResource( 2 )]
-position = Vector2( 31.7137, 3738.31 )
-scale = Vector2( 1, 22.975 )
+position = Vector2( 31.7137, 3452.35 )
+scale = Vector2( 1, 13.9852 )
 
 [node name="Block20" parent="." instance=ExtResource( 2 )]
 position = Vector2( 282.68, 556.241 )
@@ -250,4 +263,7 @@ position = Vector2( 599.931, 1476.37 )
 
 [node name="Altar2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 870.019, 3225.07 )
+
+[node name="Finish" parent="." instance=ExtResource( 6 )]
+position = Vector2( 558.836, 3796.81 )
 
