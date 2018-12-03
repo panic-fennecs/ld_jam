@@ -51,7 +51,7 @@ position = Vector2( 1107.5, -859.009 )
 scale = Vector2( 7.7165, 3.39772 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1121.88, -1045.49 )
+position = Vector2( 1095.99, -1013.14 )
 
 [node name="Altar" parent="." instance=ExtResource( 3 )]
 position = Vector2( 172.162, -1003.84 )
