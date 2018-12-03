@@ -8,6 +8,7 @@ var charge_cooldown = 0
 var state = State["MOVING"]
 var dead = false;
 var damaged_in_this_charge = false
+var time = 0
 
 const MAX_SPEED = 100;
 const ACCELERATION = 40;
@@ -17,6 +18,7 @@ const CHARGE_COOLDOWN = 100;
 const DAMAGE = 50;
 const DAMAGE_DISTANCE = 70;
 const CORPSE_PRELOAD = preload("res://Corpse.tscn")
+const DEAD_BODY_PRELOAD = preload("res://DeadBody.tscn")
 
 func _process_moving():
 	if target_velocity > 0:
@@ -90,12 +92,21 @@ func die():
 	var corpse = CORPSE_PRELOAD.instance()
 	corpse.set_position(position)
 	get_node("/root/Main").add_child(corpse)
+	
+	var dead_body = DEAD_BODY_PRELOAD.instance()
+	dead_body.set_position(position + Vector2(0, -25))
+	dead_body.get_node("AnimatedSprite").set_animation("mob1")
+	get_node("/root/Main").add_child(dead_body)
+	
 	queue_free()
 
 func _physics_process(delta):
+	time += delta
 	if dead:
 		die()
 		return
+	else:
+		set_sprite()
 
 	_calculate_state()
 
@@ -179,3 +190,16 @@ func damage(damage):
 
 func collide_spike():
 	dead = true
+
+func set_sprite():
+	if target_velocity < 0:
+		$AnimatedSprite.flip_h = true
+	elif target_velocity > 0:
+		$AnimatedSprite.flip_h = false
+
+	if state == State["CHARGE"]:
+		$AnimatedSprite.set_animation("charge")
+	else:
+		$AnimatedSprite.set_animation("walk")
+
+		$AnimatedSprite.offset.y = sin(time*5)*2.5

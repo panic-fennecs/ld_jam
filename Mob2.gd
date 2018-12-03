@@ -3,14 +3,19 @@ extends KinematicBody2D
 export (int) var max_explosion_count = 30
 const CORPSE_PRELOAD = preload("res://Corpse.tscn")
 const EXPLOSION_PRELOAD = preload("res://Explosion.tscn")
+const DEAD_BODY_PRELOAD = preload("res://DeadBody.tscn")
 
 var explosion_countdown = 0
 var default_scale = 1
+var time = 0
 
 func _physics_process(delta):
+	time += delta
+	$AnimatedSprite.offset.y = sin(time*5)*2.5
 	if !is_in_explosion():
 		if is_player_close():
 			start_explosion()
+			$AnimatedSprite.set_animation("trigger")
 	else:
 		$ExplosionIndicator.visible = true
 		$ExplosionIndicator.self_modulate.a = explosion_countdown / float(max_explosion_count)
@@ -29,6 +34,13 @@ func _physics_process(delta):
 			var corpse = CORPSE_PRELOAD.instance()
 			corpse.set_position(position)
 			get_node("/root/Main").add_child(corpse)
+
+			var dead_body = DEAD_BODY_PRELOAD.instance()
+			dead_body.set_position(position)
+			dead_body.get_node("AnimatedSprite").set_animation("mob2")
+
+			get_node("/root/Main").add_child(dead_body)
+			
 			queue_free()
 			
 

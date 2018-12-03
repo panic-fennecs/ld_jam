@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mob.png-8b8259b14663fd50558dee3a5c4276b9.stex"
+path="res://.import/mob1_base.png-1cc41f70593d90a21dc1ad52c10a5781.stex"
 
 [deps]
 
-source_file="res://resources/mob.png"
-dest_files=[ "res://.import/mob.png-8b8259b14663fd50558dee3a5c4276b9.stex" ]
+source_file="res://resources/mobs/mob1_base.png"
+dest_files=[ "res://.import/mob1_base.png-1cc41f70593d90a21dc1ad52c10a5781.stex" ]
 
 [params]
 

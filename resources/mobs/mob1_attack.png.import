@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mob2_dead.png-612cb3b513ca0190fe81b5d11e8b64ab.stex"
+path="res://.import/mob1_attack.png-cbcb61521c5eadb244883425c8cb87aa.stex"
 
 [deps]
 
-source_file="res://resources/mob2/mob2_dead.png"
-dest_files=[ "res://.import/mob2_dead.png-612cb3b513ca0190fe81b5d11e8b64ab.stex" ]
+source_file="res://resources/mobs/mob1_attack.png"
+dest_files=[ "res://.import/mob1_attack.png-cbcb61521c5eadb244883425c8cb87aa.stex" ]
 
 [params]
 

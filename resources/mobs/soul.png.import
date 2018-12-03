@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mob2_base.png-73b4ec08f26a292fee0698c4d6b55925.stex"
+path="res://.import/soul.png-bede53e76a38b32e256cda87356e7505.stex"
 
 [deps]
 
-source_file="res://resources/mob2/mob2_base.png"
-dest_files=[ "res://.import/mob2_base.png-73b4ec08f26a292fee0698c4d6b55925.stex" ]
+source_file="res://resources/mobs/soul.png"
+dest_files=[ "res://.import/soul.png-bede53e76a38b32e256cda87356e7505.stex" ]
 
 [params]
 
