@@ -2,7 +2,7 @@ extends Node2D
 
 func _on_Area2D_body_entered(body):
 	if body.has_method("sacrify"):
-		get_node("/root/PositionSaver").checkpoint_position = get_position()
+		get_node("/root/GlobalState").checkpoint_position = get_position()
 		print("checkpoint: ", get_position())
 		body.sacrify()
 		$FinishSacrificeTimer.start()
