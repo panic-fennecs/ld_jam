@@ -5,15 +5,20 @@ const CORPSE_PRELOAD = preload("res://Corpse.tscn")
 const EXPLOSION_PRELOAD = preload("res://Explosion.tscn")
 
 var explosion_countdown = 0
-var default_scale = 1
+var explosion_default_scale
+
+func _ready():
+	explosion_default_scale = $ExplosionIndicator.scale
 
 func _physics_process(delta):
 	if !is_in_explosion():
 		if is_player_close():
 			start_explosion()
 	else:
+		var explosion_factor = explosion_countdown / float(max_explosion_count)
 		$ExplosionIndicator.visible = true
-		$ExplosionIndicator.self_modulate.a = explosion_countdown / float(max_explosion_count)
+		$ExplosionIndicator.scale = explosion_default_scale * explosion_factor 
+		$ExplosionIndicator.self_modulate.a = explosion_factor
 		explosion_countdown += 1
 		if explosion_countdown >= max_explosion_count:
 			damage_aoe()

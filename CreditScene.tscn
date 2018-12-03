@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://CreditScene.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Jovanny Lemonad - Bender.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://CharacterRig.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+
+emission_shape = 2
+emission_box_extents = Vector3( 200, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 200, 0 )
+initial_velocity_random = 0.38
+angular_velocity = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 10.0
+scale_random = 0.5
+color = Color( 0.984314, 0.345098, 0.345098, 1 )
+
+[node name="EndScene" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 300.451 ],
+"_edit_vertical_guides_": [ 512.302 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -5.0
+margin_top = -1.0
+margin_right = 1024.0
+margin_bottom = 603.0
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 285.0
+margin_top = 32.0
+margin_right = 996.0
+margin_bottom = 581.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "Eius fuga inventore illum impedit aut fuga odio ipsa. Sit sint dicta neque nihil quo quia. Omnis saepe voluptatibus commodi. Nihil fuga tempore consequatur.
+
+Tempora consequatur repudiandae at repudiandae aliquam. Quisquam nesciunt officiis sed aut sed id. Quisquam ut expedita voluptas accusamus veritatis. Sit eos nostrum architecto autem quisquam officiis et aliquid. Reprehenderit dolorem quod modi et quae inventore. Est quos eveniet quia id aut perspiciatis deserunt.
+
+Deleniti nisi magni est qui sit animi. Sint necessitatibus et enim vel in id sint dolor. Ut ut consequatur id esse consectetur quia. Et minus accusantium itaque.
+
+Quo velit ut velit. Sed voluptas culpa vitae earum quia. Tempora asperiores nostrum eos. Voluptas voluptatibus ea excepturi vero delectus sed. Maiores explicabo voluptas nostrum optio dolores ab.
+
+Voluptas minima ut molestiae vero similique voluptatem quae. Sit veritatis id ad iure accusamus pariatur voluptatibus. Voluptates velit ea est culpa. Ab sit voluptas libero qui rem veritatis ea minima. Ut distinctio adipisci et voluptatem animi. Dolorem sed molestiae reprehenderit dicta reprehenderit ipsum provident."
+scroll_active = false
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 528.5, 143.61 )
+amount = 3
+lifetime = 2.0
+speed_scale = 3.0
+process_material = SubResource( 2 )
+
+[node name="CharacterSprite" parent="." instance=ExtResource( 3 )]
+position = Vector2( 141.216, 271.627 )
+scale = Vector2( 0.2, 0.2 )
+z_index = 3
+
