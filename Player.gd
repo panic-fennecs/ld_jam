@@ -29,7 +29,6 @@ func _physics_process(delta):
 		set_anim("Dying")
 		# dash to respawn when you are dead
 		if (Input.is_action_pressed("ui_up")):
-			global_state.death_count += 1
 			call_deferred("restart")
 		return
 	
@@ -146,6 +145,8 @@ func restart():
 
 func die():
 	AudioPlayerScene.play_dying_sound()
+	if not dead:
+		global_state.death_count += 1
 	dead = true
 	get_node("/root/Main/Camera/ContinueLabel").visible = true
 	get_node("/root/Main/Camera/DeathLabel").visible = true

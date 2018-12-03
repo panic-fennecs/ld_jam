@@ -13,21 +13,23 @@ func _physics_process(delta):
 	if finished and Input.is_action_pressed("ui_up"):
 		var terrain_name = get_node("..").name
 
-		var global_state = get_node("/root/GlobalState")
-
 		var main = get_node("/root/Main")
 		var old_terrain = main.get_node(terrain_name)
 
 		var new_scene = load(next_level)
 		main.add_child(new_scene.instance())
 
+		var global_state = get_node("/root/GlobalState")
 		global_state.checkpoint_position = player_spawn_position
 		finished = false
 
 		get_tree().reload_current_scene()
-
+		global_state.death_count = 0
 		main.remove_child(old_terrain)
 
 func finish():
 	get_node("/root/Main/Camera/ContinueLabel").visible = true
+	var death_label = get_node("/root/Main/Camera/DeathLabel")
+	var global_state = get_node("/root/GlobalState")
+	death_label.visible = true
 	finished = true

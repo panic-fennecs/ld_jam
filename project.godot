@@ -27,6 +27,8 @@ GlobalState="*res://GlobalState.gd"
 
 [display]
 
+window/size/width=1408
+window/size/height=792
 window/size/resizable=false
 
 [input]
