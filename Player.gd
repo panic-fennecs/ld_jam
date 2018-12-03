@@ -14,12 +14,14 @@ var carry = null
 var anim = "Base"
 var dead = false
 var is_double_jump = false
+var global_state
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global_state = get_node("/root/GlobalState")
 	update_healthbar()
 	set_anim("Base")
-	set_position(get_node("/root/GlobalState").checkpoint_position)
+	set_position(global_state.checkpoint_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -27,6 +29,7 @@ func _physics_process(delta):
 		set_anim("Dying")
 		# dash to respawn when you are dead
 		if (Input.is_action_pressed("ui_up")):
+			global_state.death_count += 1
 			call_deferred("restart")
 		return
 	
@@ -145,6 +148,7 @@ func die():
 	AudioPlayerScene.play_dying_sound()
 	dead = true
 	get_node("/root/Main/Camera/ContinueLabel").visible = true
+	get_node("/root/Main/Camera/DeathLabel").visible = true
 	
 
 func collide_spike():
@@ -165,7 +169,6 @@ func damage(x):
 func update_healthbar():
 	var perc = float(health) / MAX_HEALTH
 	get_node("HealthBar/MainSprite").region_rect.size.x = 160 * perc
-	get_node("/root/Main/Camera/Healthbar").text = str(health)
 
 func look_direction():
 	return (looks_right as int) * 2 - 1
