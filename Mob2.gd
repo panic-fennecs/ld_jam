@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal die()
+
 export (int) var max_explosion_count = 30
 const CORPSE_PRELOAD = preload("res://Corpse.tscn")
 const EXPLOSION_PRELOAD = preload("res://Explosion.tscn")
@@ -46,6 +48,7 @@ func _physics_process(delta):
 			dead_body.get_node("AnimatedSprite").set_animation("mob2")
 
 			get_node("/root/Main").add_child(dead_body)
+			emit_signal("die")
 			queue_free()
 
 func damage_aoe():
