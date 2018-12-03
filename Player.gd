@@ -19,7 +19,7 @@ var is_double_jump = false
 func _ready():
 	update_healthbar()
 	set_anim("Base")
-	set_position(get_node("/root/Main/CheckpointPosition").get_position())
+	set_position(get_node("/root/PositionSaver").checkpoint_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

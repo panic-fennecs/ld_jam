@@ -20,7 +20,4 @@ position = Vector2( 2, 0 )
 
 [node name="AudioPlayer" parent="." instance=ExtResource( 5 )]
 
-[node name="CheckpointPosition" type="Position2D" parent="."]
-position = Vector2( 141.897, 208.154 )
-
 [connection signal="strike" from="God" to="Camera" method="_on_God_strike"]
