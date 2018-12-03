@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Camera.gd" type="Script" id=1]
 [ext_resource path="res://ThunderBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/Jovanny Lemonad - Bender.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+font_data = ExtResource( 3 )
 
 [node name="Camera" type="Camera2D"]
 anchor_mode = 0
@@ -25,5 +31,16 @@ margin_right = 40.0
 margin_bottom = 14.0
 
 [node name="ThunderBar" parent="." instance=ExtResource( 2 )]
+
+[node name="ContinueLabel" type="Label" parent="."]
+visible = false
+margin_left = 2.0
+margin_top = 404.0
+margin_right = 1027.0
+margin_bottom = 598.0
+custom_fonts/font = SubResource( 1 )
+text = "press space to continue"
+align = 1
+valign = 1
 
 [connection signal="timeout" from="ShakeTimer" to="." method="_on_ShakeTimer_timeout"]

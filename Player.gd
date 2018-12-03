@@ -12,6 +12,8 @@ var health = MAX_HEALTH
 var dash_counter = 0
 var carry = null
 var anim = "Base"
+var dead = false
+var is_double_jump = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +23,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	if dead:
+		set_anim("Dying")
+		# dash to respawn when you are dead
+		if (Input.is_action_pressed("dash")):
+			#todo bruno respawn at checkpoint <3
+			call_deferred("restart")
+		return
+	
 	var dir = (Input.is_action_pressed("ui_right") as int) - (Input.is_action_pressed("ui_left") as int)
 	var new_looks_right = looks_right
 	if dir == -1:
@@ -31,8 +41,9 @@ func _physics_process(delta):
 		$CharacterSprite.scale.x *= -1
 		looks_right = new_looks_right
 
-	set_correct_anim(dir)
-	
+	if !dead:
+		set_correct_anim(dir)
+		
 	if dash_counter == 0:
 		# movement
 		velocity.x += dir * delta * 7000
@@ -60,6 +71,7 @@ func _physics_process(delta):
 	if is_grounded():
 		can_dash = true
 		can_jump = true
+		is_double_jump = false
 	
 func jump():
 	set_anim(carry_anim("Jump"))
@@ -73,6 +85,7 @@ func try_jump():
 		elif can_jump:
 			jump()
 			can_jump = false
+			is_double_jump = true
 			AudioPlayerScene.play_doublejump_sound()
 
 
@@ -131,7 +144,9 @@ func restart():
 
 func die():
 	AudioPlayerScene.play_dying_sound()
-	call_deferred("restart")
+	dead = true
+	get_node("/root/Main/Camera/ContinueLabel").visible = true
+	
 
 func collide_spike():
 	die()
@@ -168,11 +183,16 @@ func set_correct_anim(dir):
 	if carry:
 		carrystr = "Carry"
 	var walking = (dash_counter == 0) and dir != 0
-	if walking:
+	if walking and is_grounded():
 		set_anim(carrystr + "Move")
 	if dash_counter > 0:
 		set_anim("Dash")
-	if !walking and dash_counter == 0:
+	elif !is_grounded():
+		if can_jump:
+			set_anim(carrystr + "Jump")
+		elif is_double_jump:
+			set_anim(carrystr + "Jump") #todo add double jump anim if you want to baby <3
+	elif !walking and dash_counter == 0:
 		set_anim(carrystr + "Base")
 
 func carry_anim(x):
@@ -188,3 +208,4 @@ func set_anim(x):
 	if x != anim:
 		anim = x
 		$CharacterSprite/AnimationPlayer.play(x)
+		print(x)
