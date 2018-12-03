@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	$FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
 	$DeathCounterLabel.text = str(global_state.death_count) + " deaths"
-	$DeathLabel.text = str(global_state.death_count + 1) + " deaths" #pls don't hate me
+	$DeathLabel.text = str(global_state.death_count) + " deaths"
 	absolute_position.y = get_parent().get_node("Player").position.y - get_viewport().size.y / 2
 	position = absolute_position
 	position += shake_offset
