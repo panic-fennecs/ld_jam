@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Terrain.gd" type="Script" id=1]
 [ext_resource path="res://Block.tscn" type="PackedScene" id=2]
@@ -6,66 +6,41 @@
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Altar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Finish.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Mob2.tscn" type="PackedScene" id=7]
 
 [node name="Terrain" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Block" parent="." instance=ExtResource( 2 )]
-position = Vector2( 160.808, 334.29 )
-scale = Vector2( 4.95752, 0.960047 )
-
 [node name="Block12" parent="." instance=ExtResource( 2 )]
-position = Vector2( 581.477, 334.29 )
-scale = Vector2( 8.7289, 0.960047 )
+position = Vector2( 426.477, 334.29 )
+scale = Vector2( 13.6058, 0.960047 )
 
 [node name="Block15" parent="." instance=ExtResource( 2 )]
-position = Vector2( 787.031, 764.3 )
+position = Vector2( 787.031, 761.3 )
 scale = Vector2( 7.15615, 0.960047 )
 
 [node name="Block26" parent="." instance=ExtResource( 2 )]
-position = Vector2( 772.69, 1822.6 )
-scale = Vector2( 7.15615, 0.960047 )
+position = Vector2( 589.69, 1822.6 )
+scale = Vector2( 11.4335, 0.960047 )
 
 [node name="Block34" parent="." instance=ExtResource( 2 )]
-position = Vector2( 772.69, 2768.62 )
-scale = Vector2( 7.15615, 0.960047 )
-
-[node name="Block36" parent="." instance=ExtResource( 2 )]
-position = Vector2( 464.359, 2670.67 )
-scale = Vector2( 7.15615, 0.960047 )
+position = Vector2( 822.69, 2768.62 )
+scale = Vector2( 4.11805, 0.960047 )
 
 [node name="Block42" parent="." instance=ExtResource( 2 )]
-position = Vector2( 724.887, 3592.8 )
-scale = Vector2( 7.15615, 0.960047 )
-
-[node name="Block43" parent="." instance=ExtResource( 2 )]
-position = Vector2( 366.362, 3590.41 )
-scale = Vector2( 7.15615, 0.960047 )
-
-[node name="Block45" parent="." instance=ExtResource( 2 )]
-position = Vector2( 284.618, 3869.56 )
-scale = Vector2( 7.15615, 0.960047 )
+position = Vector2( 611.887, 3592.8 )
+scale = Vector2( 12.3529, 0.960047 )
 
 [node name="Block47" parent="." instance=ExtResource( 2 )]
-position = Vector2( 731.937, 3869.56 )
-scale = Vector2( 7.15615, 0.960047 )
+position = Vector2( 508.937, 3869.56 )
+scale = Vector2( 15.9506, 0.960047 )
 
 [node name="Block39" parent="." instance=ExtResource( 2 )]
-position = Vector2( 371.142, 3294.18 )
+position = Vector2( 371.142, 3292.18 )
 scale = Vector2( 7.15615, 0.960047 )
 
 [node name="Block41" parent="." instance=ExtResource( 2 )]
-position = Vector2( 994.975, 3287.02 )
-scale = Vector2( 7.15615, 0.960047 )
-
-[node name="Block40" parent="." instance=ExtResource( 2 )]
-position = Vector2( 469.139, 2940.62 )
-scale = Vector2( 7.15615, 0.960047 )
-
-[node name="Block27" parent="." instance=ExtResource( 2 )]
-position = Vector2( 450.018, 1827.38 )
-scale = Vector2( 7.15615, 0.960047 )
+position = Vector2( 879.804, 3323.72 )
+scale = Vector2( 4.27795, 0.960047 )
 
 [node name="Block30" parent="." instance=ExtResource( 2 )]
 position = Vector2( 124.517, 2148.16 )
@@ -76,39 +51,35 @@ position = Vector2( 906.539, 2117.33 )
 scale = Vector2( 2.71893, 0.960047 )
 
 [node name="Block17" parent="." instance=ExtResource( 2 )]
-position = Vector2( 419.339, 1088.75 )
-scale = Vector2( 5.11742, 0.960047 )
+position = Vector2( 433.339, 1088.75 )
+scale = Vector2( 5.4772, 0.960047 )
 
 [node name="Block22" parent="." instance=ExtResource( 2 )]
 position = Vector2( 371.536, 1540.26 )
 scale = Vector2( 11.2336, 0.960047 )
 
 [node name="Block29" parent="." instance=ExtResource( 2 )]
-position = Vector2( 433.68, 2418.55 )
-scale = Vector2( 12.3929, 0.960047 )
+position = Vector2( 443.68, 2418.55 )
+scale = Vector2( 11.8332, 0.960047 )
 
 [node name="Block19" parent="." instance=ExtResource( 2 )]
-position = Vector2( 153.638, 754.744 )
-scale = Vector2( 5.11742, 0.960047 )
+position = Vector2( 157.638, 571.744 )
+scale = Vector2( 5.11742, 6.55368 )
 
 [node name="Block3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 436.479, 147.592 )
+position = Vector2( 436.479, 148.592 )
 scale = Vector2( 4.95752, 0.960047 )
 
 [node name="Block4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 159.302, -305.602 )
-scale = Vector2( 4.95752, 0.960047 )
+position = Vector2( 159.302, -237.602 )
+scale = Vector2( 4.95752, 3.59705 )
 
 [node name="Block6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 579.755, -550.896 )
+position = Vector2( 579.755, -549.896 )
 scale = Vector2( 8.75515, 0.960047 )
 
 [node name="Block2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 292.241, 240.901 )
-scale = Vector2( 1, 3.83677 )
-
-[node name="Block13" parent="." instance=ExtResource( 2 )]
-position = Vector2( 825.247, 221.789 )
 scale = Vector2( 1, 3.83677 )
 
 [node name="Block14" parent="." instance=ExtResource( 2 )]
@@ -120,32 +91,24 @@ position = Vector2( 985.388, 1521.37 )
 scale = Vector2( 1, 22.975 )
 
 [node name="Block33" parent="." instance=ExtResource( 2 )]
-position = Vector2( 985.388, 2954.74 )
-scale = Vector2( 1, 22.975 )
-
-[node name="Block46" parent="." instance=ExtResource( 2 )]
-position = Vector2( 987.2, 3798.99 )
-scale = Vector2( 1, 3.47718 )
+position = Vector2( 985.388, 3043.74 )
+scale = Vector2( 1, 24.8129 )
 
 [node name="Block28" parent="." instance=ExtResource( 2 )]
-position = Vector2( 31.7136, 2276.28 )
+position = Vector2( 34.7136, 2276.28 )
 scale = Vector2( 1, 22.975 )
 
 [node name="Block44" parent="." instance=ExtResource( 2 )]
 position = Vector2( 31.7137, 3452.35 )
 scale = Vector2( 1, 13.9852 )
 
-[node name="Block20" parent="." instance=ExtResource( 2 )]
-position = Vector2( 282.68, 556.241 )
-scale = Vector2( 1, 6.15414 )
-
 [node name="Block5" parent="." instance=ExtResource( 2 )]
 position = Vector2( 567.912, -170.136 )
 scale = Vector2( 1, 10.9087 )
 
 [node name="Block16" parent="." instance=ExtResource( 2 )]
-position = Vector2( 578.086, 921.165 )
-scale = Vector2( 1, 5.95436 )
+position = Vector2( 578.086, 925.165 )
+scale = Vector2( 1, 6.07422 )
 
 [node name="Block21" parent="." instance=ExtResource( 2 )]
 position = Vector2( 290.142, 1162.45 )
@@ -156,24 +119,20 @@ position = Vector2( 753.833, 1492.12 )
 scale = Vector2( 1, 2.47832 )
 
 [node name="Block31" parent="." instance=ExtResource( 2 )]
-position = Vector2( 529.158, 2010.52 )
-scale = Vector2( 1, 5.23518 )
+position = Vector2( 529.158, 2013.52 )
+scale = Vector2( 1, 5.03541 )
 
 [node name="Block38" parent="." instance=ExtResource( 2 )]
-position = Vector2( 113.27, 3154.82 )
-scale = Vector2( 1, 5.23518 )
+position = Vector2( 104.924, 3154.82 )
+scale = Vector2( 1.29023, 5.23518 )
 
 [node name="Block35" parent="." instance=ExtResource( 2 )]
-position = Vector2( 663.007, 2801.26 )
-scale = Vector2( 1, 5.23518 )
-
-[node name="Block37" parent="." instance=ExtResource( 2 )]
-position = Vector2( 266.24, 2810.82 )
-scale = Vector2( 1, 5.23518 )
+position = Vector2( 463.007, 2812.26 )
+scale = Vector2( 7.15615, 5.23518 )
 
 [node name="Block7" parent="." instance=ExtResource( 2 )]
-position = Vector2( 828.44, -179.692 )
-scale = Vector2( 1, 10.9087 )
+position = Vector2( 828.44, -106.692 )
+scale = Vector2( 1, 12.9064 )
 
 [node name="Block10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 986.191, -607.312 )
@@ -200,36 +159,36 @@ position = Vector2( 22.9553, -600.145 )
 scale = Vector2( 1, 10.9087 )
 
 [node name="Spikes" parent="." instance=ExtResource( 3 )]
-position = Vector2( 251.569, 215.305 )
+position = Vector2( 248.569, 215.305 )
 rotation = -1.5708
 scale = Vector2( 3.55709, 1 )
 
 [node name="Spikes2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 573.819, -593.948 )
+position = Vector2( 573.819, -591.948 )
 scale = Vector2( 11.1836, 1 )
 
 [node name="Spikes3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 669.891, 721.58 )
+position = Vector2( 671.891, 719.58 )
 scale = Vector2( 5.0674, 1 )
 
 [node name="Spikes7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 827.642, 1784.66 )
+position = Vector2( 827.642, 1780.66 )
 scale = Vector2( 5.0674, 1 )
 
 [node name="Spikes9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 827.642, 2728.29 )
-scale = Vector2( 5.0674, 1 )
+position = Vector2( 822.642, 2728.29 )
+scale = Vector2( 5.2273, 1 )
 
 [node name="Spikes10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 275.514, 2635.12 )
+position = Vector2( 275.514, 2633.12 )
 scale = Vector2( 1.78946, 1 )
 
 [node name="Spikes13" parent="." instance=ExtResource( 3 )]
-position = Vector2( 103.423, 2974.35 )
-scale = Vector2( 1.78946, 1 )
+position = Vector2( 105.423, 2975.35 )
+scale = Vector2( 1.54961, 1 )
 
 [node name="Spikes8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 438.045, 2374.73 )
+position = Vector2( 438.045, 2376.73 )
 scale = Vector2( 15.301, 1 )
 
 [node name="Spikes11" parent="." instance=ExtResource( 3 )]
@@ -238,17 +197,13 @@ rotation = 4.71239
 scale = Vector2( 2.19591, 1 )
 
 [node name="Spikes5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 177.173, 791.86 )
+position = Vector2( 194.173, 791.86 )
 rotation = 3.14159
-scale = Vector2( 5.90688, 1 )
+scale = Vector2( 5.02743, 1 )
 
 [node name="Spikes4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 399.268, 1047.42 )
-scale = Vector2( 5.94685, 1 )
-
-[node name="Spikes6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 399.268, 1047.42 )
-scale = Vector2( 5.94685, 1 )
+scale = Vector2( 5.74697, 1 )
 
 [node name="Mob" parent="." instance=ExtResource( 4 )]
 position = Vector2( 425.449, 1450.09 )
@@ -263,13 +218,10 @@ position = Vector2( 679.762, 3524.4 )
 position = Vector2( 599.931, 1476.37 )
 
 [node name="Altar2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 870.019, 3225.07 )
+position = Vector2( 849.99, 3261.77 )
 
 [node name="Finish" parent="." instance=ExtResource( 6 )]
 position = Vector2( 558.836, 3796.81 )
 next_level = "res://Terrain.tscn"
 player_spawn_position = Vector2( 141.897, 208.154 )
-
-[node name="KinematicBody2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 420, 70 )
 
