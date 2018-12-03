@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Mob2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Altar.tscn" type="PackedScene" id=3]
+
+[node name="level_0" type="Node2D"]
+
+[node name="Block" parent="." instance=ExtResource( 1 )]
+position = Vector2( 697.937, 856.205 )
+scale = Vector2( 22.3889, 8.11323 )
+
+[node name="Block2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168.318, 415.809 )
+scale = Vector2( 3.55866, 5.83539 )
+
+[node name="Block3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1247.45, 504.738 )
+scale = Vector2( 3.07892, 3.07802 )
+
+[node name="Block4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 25.8949, -554.657 )
+scale = Vector2( 1, 36.1665 )
+
+[node name="Block5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1371.76, -552.808 )
+scale = Vector2( 1, 36.1665 )
+
+[node name="Block6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 761.853, 16.6937 )
+scale = Vector2( 3.99844, 1 )
+
+[node name="Block7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 395.63, -490.303 )
+scale = Vector2( 12.474, 1 )
+
+[node name="Block10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 220.712, -1515.91 )
+scale = Vector2( 5.35773, 1 )
+
+[node name="Block12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1176.87, -1511.48 )
+scale = Vector2( 5.35773, 1 )
+
+[node name="Block11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 162.277, -742.77 )
+scale = Vector2( 3.47871, 6.91437 )
+
+[node name="Block9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1107.5, -859.009 )
+scale = Vector2( 7.7165, 3.39772 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1121.88, -1045.49 )
+
+[node name="Altar" parent="." instance=ExtResource( 3 )]
+position = Vector2( 172.162, -1003.84 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 940.0
+margin_top = -961.0
+margin_right = 1091.0
+margin_bottom = -947.0
+rect_scale = Vector2( 2.53273, 1.96508 )
+text = "Pick up the soul with 'e'"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 63.0
+margin_top = -966.0
+margin_right = 168.0
+margin_bottom = -935.0
+rect_scale = Vector2( 2.53273, 1.96508 )
+text = "and sacrifice"
+
