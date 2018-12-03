@@ -102,4 +102,13 @@ lifetime = 2.0
 speed_scale = 3.0
 process_material = SubResource( 4 )
 
+[node name="CreditButton" type="Button" parent="."]
+margin_left = 2.0
+margin_top = 646.0
+margin_right = 229.0
+margin_bottom = 720.0
+text = "Credits"
+flat = true
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CreditButton" to="." method="_on_CreditButton_pressed"]

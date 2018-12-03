@@ -23,7 +23,6 @@ margin_bottom = 720.0
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="TextNode" type="Node2D" parent="."]
-scale = Vector2( 1, 1 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TextNode"]
 margin_left = 471.0

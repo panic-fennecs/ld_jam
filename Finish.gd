@@ -38,3 +38,4 @@ func finish():
 	var global_state = get_node("/root/GlobalState")
 	death_label.visible = true
 	finished = true
+	AudioPlayerScene.play_game_over_sound()
