@@ -24,13 +24,12 @@ func _physics_process(delta):
 		finished = false
 
 		get_tree().reload_current_scene()
-
+		global_state.death_count = 0
 		main.remove_child(old_terrain)
 
 func finish():
 	get_node("/root/Main/Camera/ContinueLabel").visible = true
 	var death_label = get_node("/root/Main/Camera/DeathLabel")
 	var global_state = get_node("/root/GlobalState")
-	death_label.text = str(global_state.death_count) + " deaths"
 	death_label.visible = true
 	finished = true
