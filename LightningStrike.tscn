@@ -19,4 +19,3 @@ one_shot = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="DuringAttackTimer" to="." method="_on_DuringAttackTimer_timeout"]
-[connection signal="timeout" from="DuringAttackTimer" to="." method="_on_CameraShakeTimer_timeout"]
