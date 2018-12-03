@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 AudioplayerSingleton="*res://AudioPlayer.gd"
 AudioPlayerScene="*res://AudioPlayer.tscn"
+PositionSaver="*res://PositionSaver.gd"
 
 [display]
 
