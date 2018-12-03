@@ -17,6 +17,7 @@ var anim = "Base"
 func _ready():
 	update_healthbar()
 	set_anim("Base")
+	set_position(get_node("/root/Main/CheckpointPosition").get_position())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -149,9 +150,6 @@ func damage(x):
 
 func update_healthbar():
 	var perc = float(health) / MAX_HEALTH
-	print("perc: ", perc)
-	print("health: ", health)
-	print("new_size: ", MAX_HEALTH * perc)
 	get_node("HealthBar/MainSprite").region_rect.size.x = 160 * perc
 	get_node("/root/Main/Camera/Healthbar").text = str(health)
 
