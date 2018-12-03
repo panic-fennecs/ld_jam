@@ -145,7 +145,6 @@ func die():
 	AudioPlayerScene.play_dying_sound()
 	dead = true
 	get_node("/root/Main/Camera/ContinueLabel").visible = true
-	
 
 func collide_spike():
 	die()
