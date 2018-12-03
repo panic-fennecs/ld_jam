@@ -47,8 +47,8 @@ margin_bottom = 720.0
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 169, 360 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 209, 359 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="Node2D"]
 position = Vector2( 0, -2.5 )
@@ -89,9 +89,9 @@ scroll_active = false
 
 [node name="Button" type="Button" parent="."]
 margin_left = 461.0
-margin_top = 311.0
+margin_top = 327.0
 margin_right = 819.0
-margin_bottom = 410.0
+margin_bottom = 397.0
 custom_fonts/font = SubResource( 3 )
 text = "Start"
 
