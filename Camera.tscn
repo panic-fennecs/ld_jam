@@ -39,7 +39,7 @@ margin_top = 404.0
 margin_right = 1027.0
 margin_bottom = 598.0
 custom_fonts/font = SubResource( 1 )
-text = "press space to continue"
+text = "jump to continue"
 align = 1
 valign = 1
 

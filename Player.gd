@@ -26,8 +26,7 @@ func _physics_process(delta):
 	if dead:
 		set_anim("Dying")
 		# dash to respawn when you are dead
-		if (Input.is_action_pressed("dash")):
-			#todo bruno respawn at checkpoint <3
+		if (Input.is_action_pressed("ui_up")):
 			call_deferred("restart")
 		return
 	
@@ -208,4 +207,3 @@ func set_anim(x):
 	if x != anim:
 		anim = x
 		$CharacterSprite/AnimationPlayer.play(x)
-		print(x)
