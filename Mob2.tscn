@@ -49,4 +49,3 @@ shape = SubResource( 2 )
 scale = Vector2( 0.07, 0.07 )
 frames = SubResource( 3 )
 animation = "stay"
-

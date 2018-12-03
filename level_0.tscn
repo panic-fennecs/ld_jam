@@ -51,7 +51,7 @@ position = Vector2( 1107.5, -859.009 )
 scale = Vector2( 7.7165, 3.39772 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1121.88, -1045.49 )
+position = Vector2( 1095.99, -1013.14 )
 
 [node name="Altar" parent="." instance=ExtResource( 3 )]
 position = Vector2( 172.162, -1003.84 )
@@ -71,4 +71,20 @@ margin_right = 168.0
 margin_bottom = -935.0
 rect_scale = Vector2( 2.53273, 1.96508 )
 text = "and sacrifice"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 531.0
+margin_top = 610.0
+margin_right = 663.0
+margin_bottom = 641.0
+rect_scale = Vector2( 2.53273, 1.96508 )
+text = "Move with 'A' and 'D'"
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 527.0
+margin_top = 650.0
+margin_right = 659.0
+margin_bottom = 681.0
+rect_scale = Vector2( 2.53273, 1.96508 )
+text = "Move with 'A' and 'D'"
 

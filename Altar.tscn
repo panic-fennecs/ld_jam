@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Altar.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,7 +7,15 @@
 
 extents = Vector2( 32.101, 32.1303 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="Gradient" id=2]
+
+colors = PoolColorArray( 0.0681409, 0.257271, 0.7943, 1, 0.0116072, 0.98646, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+
+gradient = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
 
 emission_shape = 1
 emission_sphere_radius = 30.0
@@ -18,9 +26,9 @@ orbit_velocity_random = 0.0
 linear_accel = 40.0
 radial_accel = 30.0
 radial_accel_random = 0.5
-scale = 7.0
-scale_random = 0.5
-color = Color( 0.913725, 0.611765, 0.329412, 1 )
+scale = 10.0
+scale_random = 1.0
+color_ramp = SubResource( 3 )
 
 [node name="Altar" type="Node2D"]
 script = ExtResource( 1 )
@@ -35,11 +43,12 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0, -34 )
 emitting = false
-amount = 200
+amount = 100
 lifetime = 2.0
 speed_scale = 1.5
-process_material = SubResource( 2 )
+process_material = SubResource( 4 )
 
 [node name="FinishSacrificeTimer" type="Timer" parent="."]
 wait_time = 2.0

@@ -7,17 +7,17 @@
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 96
+size = 128
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 
-size = 24
+size = 28
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 
-size = 24
+size = 36
 font_data = ExtResource( 4 )
 
 [sub_resource type="ParticlesMaterial" id=4]
@@ -25,7 +25,7 @@ font_data = ExtResource( 4 )
 emission_shape = 2
 emission_box_extents = Vector3( 300, 1, 1 )
 flag_disable_z = true
-gravity = Vector3( 0, 200, 0 )
+gravity = Vector3( 0, 300, 0 )
 initial_velocity_random = 0.38
 angular_velocity = 1.0
 orbit_velocity = 0.0
@@ -37,22 +37,21 @@ color = Color( 0.984314, 0.345098, 0.345098, 1 )
 [node name="StartScene" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 300.451 ],
-"_edit_vertical_guides_": [ 512.302 ]
+"_edit_horizontal_guides_": [ 360.077 ],
+"_edit_vertical_guides_": [ 640.601 ]
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -3.0
-margin_top = -1.0
-margin_right = 1026.0
-margin_bottom = 603.0
+margin_right = 1280.0
+margin_bottom = 720.0
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( 139, 474 )
-scale = Vector2( 0.4, 0.4 )
+position = Vector2( 209, 359 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Sprite" type="Sprite" parent="Node2D"]
+position = Vector2( 0, -2.5 )
 texture = ExtResource( 2 )
 
 [node name="FixBecauseMaxiCantPaint" type="ColorRect" parent="Node2D"]
@@ -65,7 +64,7 @@ color = Color( 0.156863, 0.156863, 0.156863, 1 )
 [node name="Header" type="Label" parent="."]
 margin_left = -3.0
 margin_top = 1.0
-margin_right = 1021.0
+margin_right = 1279.0
 margin_bottom = 242.0
 custom_fonts/font = SubResource( 1 )
 text = "Demon Sacrifice"
@@ -73,31 +72,31 @@ align = 1
 valign = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 663.0
-margin_top = 393.0
-margin_right = 1135.0
-margin_bottom = 602.0
+margin_left = 813.0
+margin_top = 486.0
+margin_right = 1285.0
+margin_bottom = 721.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "CONTROLS
  > press WASD to move
  > kill the angels with your 
-    dash ability
+    dash ability (shift or F or J)
  > sacrifice them before
     Cronus strikes you to death
  > have fun"
 scroll_active = false
 
 [node name="Button" type="Button" parent="."]
-margin_left = 393.0
-margin_top = 271.0
-margin_right = 631.0
-margin_bottom = 332.0
+margin_left = 461.0
+margin_top = 327.0
+margin_right = 819.0
+margin_bottom = 397.0
 custom_fonts/font = SubResource( 3 )
 text = "Start"
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 528.5, 143.61 )
+position = Vector2( 638.5, 143.61 )
 amount = 3
 lifetime = 2.0
 speed_scale = 3.0
