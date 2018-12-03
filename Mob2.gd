@@ -11,7 +11,7 @@ var time = 0
 
 func _physics_process(delta):
 	time += delta
-	$AnimatedSprite.offset.y = sin(time*5)*2.5
+	$AnimatedSprite.offset.y = sin(time*5)*100
 	if !is_in_explosion():
 		if is_player_close():
 			start_explosion()

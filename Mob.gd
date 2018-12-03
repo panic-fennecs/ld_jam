@@ -202,4 +202,4 @@ func set_sprite():
 	else:
 		$AnimatedSprite.set_animation("walk")
 
-		$AnimatedSprite.offset.y = sin(time*5)*2.5
+		$AnimatedSprite.offset.y = sin(time*5)*100
