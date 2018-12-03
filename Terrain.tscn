@@ -267,6 +267,8 @@ position = Vector2( 870.019, 3225.07 )
 
 [node name="Finish" parent="." instance=ExtResource( 6 )]
 position = Vector2( 558.836, 3796.81 )
+next_level = "res://Terrain.tscn"
+player_spawn_position = Vector2( 141.897, 208.154 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 420, 70 )

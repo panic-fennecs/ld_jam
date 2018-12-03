@@ -149,7 +149,6 @@ func die():
 	dead = true
 	get_node("/root/Main/Camera/ContinueLabel").visible = true
 	get_node("/root/Main/Camera/DeathLabel").visible = true
-	
 
 func collide_spike():
 	die()
