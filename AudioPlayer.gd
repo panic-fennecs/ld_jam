@@ -10,34 +10,52 @@ var game_over = preload("res://audio/game_over.ogg")
 var sacrifice = preload("res://audio/sacrifice.ogg")
 var background = preload("res://audio/background_music.ogg")
 
+var players = []
+
 func _ready():
-	pass
-	
-func setStream(pathToFile):
-	stream = pathToFile
-	stream.set_loop(false)
-	play()
-	
+	var music_player = AudioStreamPlayer.new()
+	background.set_loop(true)
+	music_player.stream = background
+	music_player.volume_db = -12
+	add_child(music_player)
+	music_player.play()
+
+func _physics_process(delta):
+	for p in players:
+		if not p.is_playing():
+			players.erase(p)
+			p.queue_free()
+			break
+
+func playStream(pathToFile):
+	var player = AudioStreamPlayer.new()
+	pathToFile.set_loop(false)
+	player.stream = pathToFile
+	add_child(player)
+	player.play()
+
+	players.append(player)
+
 func playLightningSound():
-	setStream(lightningStrike)
+	playStream(lightningStrike)
 
 func playEnemyDyingSound():
-	setStream(enemyDying)
+	playStream(enemyDying)
 	
 func play_dash_sound():
-	setStream(dash)
+	playStream(dash)
 
 func play_dying_sound():
-	setStream(die)
+	playStream(die)
 
 func play_jump_sound():
-	setStream(jump)
-	
+	playStream(jump)
+
 func play_doublejump_sound():
-	setStream(doublejump)
-	
+	playStream(doublejump)
+
 func play_game_over_sound():
-	setStream(game_over)
-	
+	playStream(game_over)
+
 func play_sacrifice_sound():
-	setStream(sacrifice)
+	playStream(sacrifice)
