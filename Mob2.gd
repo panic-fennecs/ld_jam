@@ -1,10 +1,11 @@
 extends KinematicBody2D
 
-const MAX_EXPLOSION_COUNT = 100
+export (int) var max_explosion_count = 30
 const CORPSE_PRELOAD = preload("res://Corpse.tscn")
 const EXPLOSION_PRELOAD = preload("res://Explosion.tscn")
 
 var explosion_countdown = 0
+var default_scale = 1
 
 func _physics_process(delta):
 	if !is_in_explosion():
@@ -12,9 +13,9 @@ func _physics_process(delta):
 			start_explosion()
 	else:
 		$ExplosionIndicator.visible = true
-		$ExplosionIndicator.self_modulate.a = explosion_countdown / float(MAX_EXPLOSION_COUNT)
+		$ExplosionIndicator.self_modulate.a = explosion_countdown / float(max_explosion_count)
 		explosion_countdown += 1
-		if explosion_countdown >= MAX_EXPLOSION_COUNT:
+		if explosion_countdown >= max_explosion_count:
 			damage_aoe()
 			
 			var explosion = EXPLOSION_PRELOAD.instance()
