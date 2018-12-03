@@ -1,18 +1,9 @@
 extends KinematicBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var dead = false
-
 export var carried = false
 export var velocity = Vector2()
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if dead:
 		queue_free()
@@ -37,7 +28,7 @@ func slide_velocity():
 func start_carry(b):
 	carried = true
 	velocity = Vector2()
-	position = Vector2()
+	position = Vector2(0, -80)
 
 func throw(b):
 	carried = false
