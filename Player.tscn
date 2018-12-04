@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://CharacterRig.tscn" type="PackedScene" id=2]
-[ext_resource path="res://HealthBar.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,7 +13,7 @@ extents = Vector2( 22.156, 49.0349 )
 custom_solver_bias = 0.0
 extents = Vector2( 22.1815, 10 )
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -45,12 +44,7 @@ shape = SubResource( 1 )
 
 [node name="CharacterSprite" parent="." index="2" instance=ExtResource( 2 )]
 
-[node name="HealthBar" parent="." index="3" instance=ExtResource( 3 )]
-
-position = Vector2( -38.5525, -71.5673 )
-scale = Vector2( 0.526155, 0.504995 )
-
-[node name="Area2D" type="Area2D" parent="." index="4"]
+[node name="Area2D" type="Area2D" parent="." index="3"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
