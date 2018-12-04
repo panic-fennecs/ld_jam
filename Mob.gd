@@ -60,9 +60,9 @@ func _process_falling():
 
 func _process_charge():
 	var collider = $PlayerRayCast.get_collider()
-
-
-	if collider and collider.name == "Player":
+	if not $PlayerRayCast.is_colliding():
+		collider = null
+	if (collider != null) and collider.name == "Player":
 		var diff = collider.position - position
 		if diff.length() < DAMAGE_DISTANCE and not damaged_in_this_charge:
 			collider.damage_from_mob1(self)
