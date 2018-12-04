@@ -23,8 +23,9 @@ func _process(delta):
 	var acc = absolute_position - current_position
 	current_position += acc * 0.2
 
-	position = current_position
-	position += shake_offset
+	if GlobalState.level != 3:
+		position = current_position
+		position += shake_offset
 
 func offset_position(offset):
 	position += offset
