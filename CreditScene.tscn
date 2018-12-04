@@ -7,92 +7,151 @@
 [sub_resource type="DynamicFont" id=1]
 
 size = 24
+use_mipmaps = false
+use_filter = false
 font_data = ExtResource( 2 )
 
-[node name="CreditScene" type="Node2D"]
+[node name="CreditScene" type="Node2D" index="0"]
+
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 300.451 ],
 "_edit_vertical_guides_": [ 512.302 ]
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = -1.0
 margin_right = 1280.0
 margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
-[node name="TextNode" type="Node2D" parent="."]
+[node name="TextNode" type="Node2D" parent="." index="1"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextNode"]
-margin_left = 471.0
-margin_top = 367.0
-margin_right = 1182.0
-margin_bottom = 3213.0
+[node name="RichTextLabel" type="RichTextLabel" parent="TextNode" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 621.0
+margin_top = 620.0
+margin_right = 1332.0
+margin_bottom = 3466.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
-text = "Headline
+bbcode_enabled = false
+bbcode_text = "						Made by
 
-Eius fuga inventore illum impedit aut fuga odio ipsa. Sit sint dicta neque nihil quo quia. Omnis saepe voluptatibus commodi. Nihil fuga tempore consequatur.
 
-Tempora consequatur repudiandae at repudiandae aliquam. Quisquam nesciunt officiis sed aut sed id. Quisquam ut expedita voluptas accusamus veritatis. Sit eos nostrum architecto autem quisquam officiis et aliquid. Reprehenderit dolorem quod modi et quae inventore. Est quos eveniet quia id aut perspiciatis deserunt.
 
-Deleniti nisi magni est qui sit animi. Sint necessitatibus et enim vel in id sint dolor. Ut ut consequatur id esse consectetur quia. Et minus accusantium itaque.
 
-Quo velit ut velit. Sed voluptas culpa vitae earum quia. Tempora asperiores nostrum eos. Voluptas voluptatibus ea excepturi vero delectus sed. Maiores explicabo voluptas nostrum optio dolores ab.
 
-Voluptas minima ut molestiae vero similique voluptatem quae. Sit veritatis id ad iure accusamus pariatur voluptatibus. Voluptates velit ea est culpa. Ab sit voluptas libero qui rem veritatis ea minima. Ut distinctio adipisci et voluptatem animi. Dolorem sed molestiae reprehenderit dicta reprehenderit ipsum provident.
-Eius fuga inventore illum impedit aut fuga odio ipsa. Sit sint dicta neque nihil quo quia. Omnis saepe voluptatibus commodi. Nihil fuga tempore consequatur.
+						OGtoad
 
-Tempora consequatur repudiandae at repudiandae aliquam. Quisquam nesciunt officiis sed aut sed id. Quisquam ut expedita voluptas accusamus veritatis. Sit eos nostrum architecto autem quisquam officiis et aliquid. Reprehenderit dolorem quod modi et quae inventore. Est quos eveniet quia id aut perspiciatis deserunt.
+						   Spix
 
-Deleniti nisi magni est qui sit animi. Sint necessitatibus et enim vel in id sint dolor. Ut ut consequatur id esse consectetur quia. Et minus accusantium itaque.
+				   memoryleak47
 
-Quo velit ut velit. Sed voluptas culpa vitae earum quia. Tempora asperiores nostrum eos. Voluptas voluptatibus ea excepturi vero delectus sed. Maiores explicabo voluptas nostrum optio dolores ab.
+					   philippkick
 
-Voluptas minima ut molestiae vero similique voluptatem quae. Sit veritatis id ad iure accusamus pariatur voluptatibus. Voluptates velit ea est culpa. Ab sit voluptas libero qui rem veritatis ea minima. Ut distinctio adipisci et voluptatem animi. Dolorem sed molestiae reprehenderit dicta reprehenderit ipsum provident.
-Eius fuga inventore illum impedit aut fuga odio ipsa. Sit sint dicta neque nihil quo quia. Omnis saepe voluptatibus commodi. Nihil fuga tempore consequatur.
+						   alok
 
-Tempora consequatur repudiandae at repudiandae aliquam. Quisquam nesciunt officiis sed aut sed id. Quisquam ut expedita voluptas accusamus veritatis. Sit eos nostrum architecto autem quisquam officiis et aliquid. Reprehenderit dolorem quod modi et quae inventore. Est quos eveniet quia id aut perspiciatis deserunt.
+						   cap"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "						Made by
 
-Deleniti nisi magni est qui sit animi. Sint necessitatibus et enim vel in id sint dolor. Ut ut consequatur id esse consectetur quia. Et minus accusantium itaque.
 
-Quo velit ut velit. Sed voluptas culpa vitae earum quia. Tempora asperiores nostrum eos. Voluptas voluptatibus ea excepturi vero delectus sed. Maiores explicabo voluptas nostrum optio dolores ab.
 
-Voluptas minima ut molestiae vero similique voluptatem quae. Sit veritatis id ad iure accusamus pariatur voluptatibus. Voluptates velit ea est culpa. Ab sit voluptas libero qui rem veritatis ea minima. Ut distinctio adipisci et voluptatem animi. Dolorem sed molestiae reprehenderit dicta reprehenderit ipsum provident.
-Eius fuga inventore illum impedit aut fuga odio ipsa. Sit sint dicta neque nihil quo quia. Omnis saepe voluptatibus commodi. Nihil fuga tempore consequatur.
 
-Tempora consequatur repudiandae at repudiandae aliquam. Quisquam nesciunt officiis sed aut sed id. Quisquam ut expedita voluptas accusamus veritatis. Sit eos nostrum architecto autem quisquam officiis et aliquid. Reprehenderit dolorem quod modi et quae inventore. Est quos eveniet quia id aut perspiciatis deserunt.
 
-Deleniti nisi magni est qui sit animi. Sint necessitatibus et enim vel in id sint dolor. Ut ut consequatur id esse consectetur quia. Et minus accusantium itaque.
+						OGtoad
 
-Quo velit ut velit. Sed voluptas culpa vitae earum quia. Tempora asperiores nostrum eos. Voluptas voluptatibus ea excepturi vero delectus sed. Maiores explicabo voluptas nostrum optio dolores ab.
+						   Spix
 
-Voluptas minima ut molestiae vero similique voluptatem quae. Sit veritatis id ad iure accusamus pariatur voluptatibus. Voluptates velit ea est culpa. Ab sit voluptas libero qui rem veritatis ea minima. Ut distinctio adipisci et voluptatem animi. Dolorem sed molestiae reprehenderit dicta reprehenderit ipsum provident."
+				   memoryleak47
+
+					   philippkick
+
+						   alok
+
+						   cap"
 scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode" ]
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 451.0
 margin_top = 680.0
 margin_right = 1280.0
 margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="ColorRect3" type="ColorRect" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 464.0
 margin_top = -1.0
 margin_right = 1280.0
 margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
-[node name="CharacterSprite" parent="." instance=ExtResource( 3 )]
+[node name="CharacterSprite" parent="." index="4" instance=ExtResource( 3 )]
+
 position = Vector2( 204, 370 )
 scale = Vector2( 0.3, 0.3 )
 z_index = 3
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." index="5"]
+
+process_mode = 1
 wait_time = 60.0
+one_shot = false
 autostart = true
 
 [connection signal="visibility_changed" from="TextNode/RichTextLabel" to="." method="_on_RichTextLabel_visibility_changed"]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+
