@@ -32,8 +32,8 @@ func _physics_process(delta):
 		finished = false
 
 func finish():
-	get_node("/root/Main/Camera/ContinueLabel").visible = true
-	var death_label = get_node("/root/Main/Camera/DeathLabel")
+	get_node("/root/Main/Camera/Labels/ContinueLabel").visible = true
+	var death_label = get_node("/root/Main/Camera/Labels/DeathLabel")
 	var global_state = get_node("/root/GlobalState")
 	death_label.visible = true
 	finished = true
