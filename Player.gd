@@ -153,8 +153,7 @@ func die():
 	if not dead:
 		global_state.death_count += 1
 	dead = true
-	get_node("/root/Main/Camera/ContinueLabel").visible = true
-	get_node("/root/Main/Camera/DeathLabel").visible = true
+	get_node("/root/Main/Camera/Labels").visible = true
 
 func collide_spike():
 	die()
