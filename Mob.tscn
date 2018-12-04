@@ -1,20 +1,20 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Mob.gd" type="Script" id=1]
-[ext_resource path="res://resources/mobs/mob1_base.png" type="Texture" id=2]
-[ext_resource path="res://resources/mobs/mob1_attack.png" type="Texture" id=3]
+[ext_resource path="res://resources/mobs/mob1_attack.png" type="Texture" id=2]
+[ext_resource path="res://resources/mobs/mob1_base.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "walk",
+"name": "charge",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "charge",
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -53,7 +53,22 @@ extents = Vector2( 30.2422, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 30.2427, 10 )
 
-[node name="Mob" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Mob" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -153,6 +168,7 @@ angular_damp = 1.0
 collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeSensorRightCharge" index="0"]
 
@@ -169,10 +185,59 @@ angular_damp = 1.0
 collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeSensorLeftCharge" index="0"]
 
 position = Vector2( -65.82, 21.53 )
 shape = SubResource( 8 )
+
+[node name="SensorBot" type="Area2D" parent="." index="9"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SensorBot" index="0"]
+
+position = Vector2( 1.7962, 39.6 )
+scale = Vector2( 1, 0.499806 )
+shape = SubResource( 9 )
+
+[node name="SL" type="Area2D" parent="." index="10"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SL" index="0"]
+
+position = Vector2( -39.5772, 0 )
+scale = Vector2( 0.505939, 1 )
+shape = SubResource( 10 )
+
+[node name="SR" type="Area2D" parent="." index="11"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SR" index="0"]
+
+position = Vector2( 40.1304, 0 )
+scale = Vector2( 0.548492, 1 )
+shape = SubResource( 11 )
 
 

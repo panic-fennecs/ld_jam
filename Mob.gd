@@ -60,6 +60,8 @@ func _process_falling():
 
 func _process_charge():
 	var collider = $PlayerRayCast.get_collider()
+
+
 	if collider and collider.name == "Player":
 		var diff = collider.position - position
 		if diff.length() < DAMAGE_DISTANCE and not damaged_in_this_charge:
@@ -161,13 +163,29 @@ func _collides_spikes(sensor):
 	return false
 
 func is_grounded():
-	return collides_direction(Vector2(0, -1))
+	#return collides_direction(Vector2(0, -1))
+	var bodies = $SensorBot.get_overlapping_bodies()
+	for b in bodies:
+		if b.name.begins_with("Block"):
+			return true
+		
+	return false
 
 func is_left_colliding():
-	return collides_direction(Vector2(1, 0))
+	var bodies = $SL.get_overlapping_bodies()
+	for b in bodies:
+		if b.name.begins_with("Block"):
+			return true
+		
+	return false
 
 func is_right_colliding():
-	return collides_direction(Vector2(-1, 0))
+	var bodies = $SR.get_overlapping_bodies()
+	for b in bodies:
+		if b.name.begins_with("Block"):
+			return true
+		
+	return false
 
 func collides_direction(x):
 	for i in range(get_slide_count()):
