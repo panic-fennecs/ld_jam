@@ -18,8 +18,9 @@ func _ready():
 	$Timer.start()
 	$DuringAttackTimer.start()
 	
+	# TODO redundant, see set_camera
 	var viewport_size = get_viewport().size
-	position_x = randf() * viewport_size.x
+	position_x = camera.absolute_position.x + randf() * viewport_size.x
 
 	update_line_position()
 
