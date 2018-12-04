@@ -18,6 +18,6 @@ position = Vector2( 2, 0 )
 [node name="AudioPlayer" parent="." instance=ExtResource( 4 )]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 520.857, 495.481 )
+position = Vector2( 622.546, 473.004 )
 
 [connection signal="strike" from="God" to="Camera" method="_on_God_strike"]
