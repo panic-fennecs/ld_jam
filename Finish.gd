@@ -28,6 +28,7 @@ func _physics_process(delta):
 
 			get_tree().reload_current_scene()
 			global_state.death_count = 0
+			global_state.level += 1
 			main.remove_child(old_terrain)
 
 		finished = false
