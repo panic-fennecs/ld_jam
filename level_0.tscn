@@ -960,7 +960,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 text = "Pickup soul with 'E'
 and deliver it here
-to settle the $LORD$"
+to settle the CRONUS"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -972,9 +972,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 4558.0
+margin_left = 4379.0
 margin_top = 3537.0
-margin_right = 4693.0
+margin_right = 4514.0
 margin_bottom = 3585.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -989,7 +989,30 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Label8" type="Label" parent="." index="106"]
+[node name="Label12" type="Label" parent="." index="106"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2632.0
+margin_top = 3795.0
+margin_right = 2767.0
+margin_bottom = 3843.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Finish"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label8" type="Label" parent="." index="107"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1011,7 +1034,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Label7" type="Label" parent="." index="107"]
+[node name="Label7" type="Label" parent="." index="108"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1033,7 +1056,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="KinematicBody2D2" parent="." index="108" instance=ExtResource( 4 )]
+[node name="KinematicBody2D2" parent="." index="109" instance=ExtResource( 4 )]
 
 position = Vector2( 5203.04, 265.438 )
 input_pickable = false
@@ -1041,7 +1064,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D3" parent="." index="109" instance=ExtResource( 4 )]
+[node name="KinematicBody2D3" parent="." index="110" instance=ExtResource( 4 )]
 
 position = Vector2( 7669.07, -202.77 )
 input_pickable = false
@@ -1049,7 +1072,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D5" parent="." index="110" instance=ExtResource( 4 )]
+[node name="KinematicBody2D5" parent="." index="111" instance=ExtResource( 4 )]
 
 position = Vector2( 7636.62, 2352.02 )
 input_pickable = false
@@ -1057,7 +1080,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D7" parent="." index="111" instance=ExtResource( 4 )]
+[node name="KinematicBody2D7" parent="." index="112" instance=ExtResource( 4 )]
 
 position = Vector2( 6734.82, 3768.01 )
 input_pickable = false
@@ -1065,7 +1088,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D15" parent="." index="112" instance=ExtResource( 4 )]
+[node name="KinematicBody2D15" parent="." index="113" instance=ExtResource( 4 )]
 
 position = Vector2( 5476.75, 3765.15 )
 input_pickable = false
@@ -1073,7 +1096,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D8" parent="." index="113" instance=ExtResource( 4 )]
+[node name="KinematicBody2D8" parent="." index="114" instance=ExtResource( 4 )]
 
 position = Vector2( 6836.31, 3631.69 )
 input_pickable = false
@@ -1081,7 +1104,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D16" parent="." index="114" instance=ExtResource( 4 )]
+[node name="KinematicBody2D16" parent="." index="115" instance=ExtResource( 4 )]
 
 position = Vector2( 5578.24, 3628.83 )
 input_pickable = false
@@ -1089,7 +1112,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D9" parent="." index="115" instance=ExtResource( 4 )]
+[node name="KinematicBody2D9" parent="." index="116" instance=ExtResource( 4 )]
 
 position = Vector2( 6728.48, 3489.02 )
 input_pickable = false
@@ -1097,7 +1120,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D20" parent="." index="116" instance=ExtResource( 4 )]
+[node name="KinematicBody2D20" parent="." index="117" instance=ExtResource( 4 )]
 
 position = Vector2( 7667.9, 3586.99 )
 input_pickable = false
@@ -1105,7 +1128,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D17" parent="." index="117" instance=ExtResource( 4 )]
+[node name="KinematicBody2D17" parent="." index="118" instance=ExtResource( 4 )]
 
 position = Vector2( 5470.41, 3486.16 )
 input_pickable = false
@@ -1113,7 +1136,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D10" parent="." index="118" instance=ExtResource( 4 )]
+[node name="KinematicBody2D10" parent="." index="119" instance=ExtResource( 4 )]
 
 position = Vector2( 6842.66, 3363.8 )
 input_pickable = false
@@ -1121,7 +1144,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D14" parent="." index="119" instance=ExtResource( 4 )]
+[node name="KinematicBody2D14" parent="." index="120" instance=ExtResource( 4 )]
 
 position = Vector2( 5584.59, 3360.94 )
 input_pickable = false
@@ -1129,7 +1152,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D11" parent="." index="120" instance=ExtResource( 4 )]
+[node name="KinematicBody2D11" parent="." index="121" instance=ExtResource( 4 )]
 
 position = Vector2( 6603.19, 3630.1 )
 input_pickable = false
@@ -1137,7 +1160,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D18" parent="." index="121" instance=ExtResource( 4 )]
+[node name="KinematicBody2D18" parent="." index="122" instance=ExtResource( 4 )]
 
 position = Vector2( 5345.12, 3627.24 )
 input_pickable = false
@@ -1145,7 +1168,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D12" parent="." index="122" instance=ExtResource( 4 )]
+[node name="KinematicBody2D12" parent="." index="123" instance=ExtResource( 4 )]
 
 position = Vector2( 6600.02, 3363.8 )
 input_pickable = false
@@ -1153,7 +1176,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D19" parent="." index="123" instance=ExtResource( 4 )]
+[node name="KinematicBody2D19" parent="." index="124" instance=ExtResource( 4 )]
 
 position = Vector2( 5341.95, 3360.94 )
 input_pickable = false
@@ -1161,7 +1184,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D13" parent="." index="124" instance=ExtResource( 4 )]
+[node name="KinematicBody2D13" parent="." index="125" instance=ExtResource( 4 )]
 
 position = Vector2( 6091.17, 3357.83 )
 input_pickable = false
@@ -1169,7 +1192,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D6" parent="." index="125" instance=ExtResource( 4 )]
+[node name="KinematicBody2D6" parent="." index="126" instance=ExtResource( 4 )]
 
 position = Vector2( 8350, 2350 )
 input_pickable = false
@@ -1177,7 +1200,7 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="KinematicBody2D4" parent="." index="126" instance=ExtResource( 4 )]
+[node name="KinematicBody2D4" parent="." index="127" instance=ExtResource( 4 )]
 
 position = Vector2( 8136.35, 186.462 )
 input_pickable = false
@@ -1185,228 +1208,228 @@ collision_layer = 1
 collision/safe_margin = 0.08
 max_explosion_count = 30
 
-[node name="Mob" parent="." index="127" instance=ExtResource( 5 )]
+[node name="Mob" parent="." index="128" instance=ExtResource( 5 )]
 
 position = Vector2( 4104.8, 3480.17 )
 
-[node name="Finish" parent="." index="128" instance=ExtResource( 6 )]
+[node name="Finish" parent="." index="129" instance=ExtResource( 6 )]
 
 position = Vector2( 2778.86, 3731.52 )
 _sections_unfolded = [ "Transform" ]
 next_level = "res://Terrain.tscn"
 player_spawn_position = Vector2( 141, 208 )
 
-[node name="NiceBlockDetail" parent="." index="129" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail" parent="." index="130" instance=ExtResource( 7 )]
 
 position = Vector2( 250, 360 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail2" parent="." index="130" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail2" parent="." index="131" instance=ExtResource( 7 )]
 
 position = Vector2( 240, 270 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail3" parent="." index="131" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail3" parent="." index="132" instance=ExtResource( 7 )]
 
 position = Vector2( 980, 610 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail4" parent="." index="132" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail4" parent="." index="133" instance=ExtResource( 7 )]
 
 position = Vector2( 1080, 620 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail5" parent="." index="133" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail5" parent="." index="134" instance=ExtResource( 7 )]
 
 position = Vector2( 3070, 420 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail6" parent="." index="134" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail6" parent="." index="135" instance=ExtResource( 7 )]
 
 position = Vector2( 3210, 940 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail9" parent="." index="135" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail9" parent="." index="136" instance=ExtResource( 7 )]
 
 position = Vector2( 3370, 910 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail10" parent="." index="136" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail10" parent="." index="137" instance=ExtResource( 7 )]
 
 position = Vector2( 3410, 1000 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail14" parent="." index="137" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail14" parent="." index="138" instance=ExtResource( 7 )]
 
 position = Vector2( 3600, 990 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail17" parent="." index="138" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail17" parent="." index="139" instance=ExtResource( 7 )]
 
 position = Vector2( 4290, 640 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail19" parent="." index="139" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail19" parent="." index="140" instance=ExtResource( 7 )]
 
 position = Vector2( 5180, 360 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail26" parent="." index="140" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail26" parent="." index="141" instance=ExtResource( 7 )]
 
 position = Vector2( 6560, 270 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail30" parent="." index="141" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail30" parent="." index="142" instance=ExtResource( 7 )]
 
 position = Vector2( 8250, 1480 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail33" parent="." index="142" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail33" parent="." index="143" instance=ExtResource( 7 )]
 
 position = Vector2( 8350, 3860 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail27" parent="." index="143" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail27" parent="." index="144" instance=ExtResource( 7 )]
 
 position = Vector2( 7650, 160 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail20" parent="." index="144" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail20" parent="." index="145" instance=ExtResource( 7 )]
 
 position = Vector2( 5090, 400 )
 scale = Vector2( 0.2, 0.2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail7" parent="." index="145" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail7" parent="." index="146" instance=ExtResource( 7 )]
 
 position = Vector2( 3290, 920 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail8" parent="." index="146" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail8" parent="." index="147" instance=ExtResource( 7 )]
 
 position = Vector2( 3330, 990 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail11" parent="." index="147" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail11" parent="." index="148" instance=ExtResource( 7 )]
 
 position = Vector2( 3450, 920 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail12" parent="." index="148" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail12" parent="." index="149" instance=ExtResource( 7 )]
 
 position = Vector2( 3520, 930 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail13" parent="." index="149" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail13" parent="." index="150" instance=ExtResource( 7 )]
 
 position = Vector2( 3610, 910 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail15" parent="." index="150" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail15" parent="." index="151" instance=ExtResource( 7 )]
 
 position = Vector2( 3680, 920 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail16" parent="." index="151" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail16" parent="." index="152" instance=ExtResource( 7 )]
 
 position = Vector2( 4370, 630 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail21" parent="." index="152" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail21" parent="." index="153" instance=ExtResource( 7 )]
 
 position = Vector2( 5040, 480 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail22" parent="." index="153" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail22" parent="." index="154" instance=ExtResource( 7 )]
 
 position = Vector2( 5260, 350 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail23" parent="." index="154" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail23" parent="." index="155" instance=ExtResource( 7 )]
 
 position = Vector2( 5290, 420 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail24" parent="." index="155" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail24" parent="." index="156" instance=ExtResource( 7 )]
 
 position = Vector2( 5720, 350 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail25" parent="." index="156" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail25" parent="." index="157" instance=ExtResource( 7 )]
 
 position = Vector2( 6480, 260 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail28" parent="." index="157" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail28" parent="." index="158" instance=ExtResource( 7 )]
 
 position = Vector2( 6480, 260 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail29" parent="." index="158" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail29" parent="." index="159" instance=ExtResource( 7 )]
 
 position = Vector2( 8240, 1560 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail31" parent="." index="159" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail31" parent="." index="160" instance=ExtResource( 7 )]
 
 position = Vector2( 7640, 2430 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail34" parent="." index="160" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail34" parent="." index="161" instance=ExtResource( 7 )]
 
 position = Vector2( 8270, 3850 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail35" parent="." index="161" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail35" parent="." index="162" instance=ExtResource( 7 )]
 
 position = Vector2( 8200, 3850 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail36" parent="." index="162" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail36" parent="." index="163" instance=ExtResource( 7 )]
 
 position = Vector2( 8220, 3920 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail32" parent="." index="163" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail32" parent="." index="164" instance=ExtResource( 7 )]
 
 position = Vector2( 8350, 2430 )
 scale = Vector2( 0.15, 0.15 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="NiceBlockDetail18" parent="." index="164" instance=ExtResource( 7 )]
+[node name="NiceBlockDetail18" parent="." index="165" instance=ExtResource( 7 )]
 
 position = Vector2( 4280, 720 )
 scale = Vector2( 0.15, 0.15 )

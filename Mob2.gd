@@ -52,6 +52,7 @@ func _physics_process(delta):
 			queue_free()
 
 func damage_aoe():
+	AudioPlayerScene.play_blob_sound()
 	for b in $Area.get_overlapping_bodies():
 		if b.name == "Player":
 			b.damage(100)
