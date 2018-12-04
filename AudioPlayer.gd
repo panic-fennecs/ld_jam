@@ -9,6 +9,7 @@ var doublejump = preload("res://audio/double_jump.ogg")
 var game_over = preload("res://audio/game_over.ogg")
 var sacrifice = preload("res://audio/sacrifice.ogg")
 var background = preload("res://audio/background_music.ogg")
+var blob = preload("res://audio/blob.ogg")
 
 var players = []
 
@@ -59,3 +60,6 @@ func play_game_over_sound():
 
 func play_sacrifice_sound():
 	playStream(sacrifice)
+	
+func play_blob_sound():
+	playStream(blob)
