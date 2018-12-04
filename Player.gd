@@ -19,7 +19,6 @@ var global_state
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_state = get_node("/root/GlobalState")
-	update_healthbar()
 	set_anim("Base")
 	set_position(global_state.checkpoint_position)
 
@@ -161,20 +160,15 @@ func collide_spike():
 	die()
 
 func damage_from_mob1(mob):
-	damage(10)
+	damage(100) # insta kill
 	velocity = mob.velocity + Vector2(0, -400)
 
 func damage(x):
 	health -= x
 	if health <= 0:
 		health = 0
-	update_healthbar()
 	if health == 0:
 		die()
-
-func update_healthbar():
-	var perc = float(health) / MAX_HEALTH
-	get_node("HealthBar/MainSprite").region_rect.size.x = 160 * perc
 
 func look_direction():
 	var x = int(looks_right) * 2 - 1
