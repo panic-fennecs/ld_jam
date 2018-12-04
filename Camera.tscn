@@ -21,7 +21,7 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
 
-[node name="Camera" type="Camera2D" index="0"]
+[node name="Camera" type="Camera2D"]
 
 anchor_mode = 0
 rotating = false
