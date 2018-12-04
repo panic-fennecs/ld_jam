@@ -9,331 +9,903 @@
 
 [node name="level_2" type="Node2D"]
 
-[node name="Block" parent="." instance=ExtResource( 1 )]
+[node name="Block" parent="." index="0" instance=ExtResource( 1 )]
+
 position = Vector2( 781.945, 375.614 )
 scale = Vector2( 24.1455, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block2" parent="." instance=ExtResource( 1 )]
+[node name="Block2" parent="." index="1" instance=ExtResource( 1 )]
+
 position = Vector2( 36.4708, 118.865 )
 scale = Vector2( 1, 9.11077 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block3" parent="." instance=ExtResource( 1 )]
+[node name="Block3" parent="." index="2" instance=ExtResource( 1 )]
+
 position = Vector2( 1278.59, 14.2639 )
 scale = Vector2( 1, 5.8345 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block17" parent="." instance=ExtResource( 1 )]
+[node name="Block17" parent="." index="3" instance=ExtResource( 1 )]
+
 position = Vector2( 1669.95, -493.724 )
 scale = Vector2( 1, 8.75118 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block23" parent="." instance=ExtResource( 1 )]
+[node name="Block23" parent="." index="4" instance=ExtResource( 1 )]
+
 position = Vector2( 2281.24, -702.344 )
 scale = Vector2( 1, 14.9441 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block7" parent="." instance=ExtResource( 1 )]
+[node name="Block7" parent="." index="5" instance=ExtResource( 1 )]
+
 position = Vector2( 1519.99, 531.849 )
 scale = Vector2( 1, 3.95664 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block6" parent="." instance=ExtResource( 1 )]
+[node name="Block6" parent="." index="6" instance=ExtResource( 1 )]
+
 position = Vector2( 1670.87, 363.455 )
 scale = Vector2( 1, 18.1405 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block10" parent="." instance=ExtResource( 1 )]
+[node name="Block10" parent="." index="7" instance=ExtResource( 1 )]
+
 position = Vector2( 1988.2, 788.41 )
 scale = Vector2( 1, 12.7866 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block29" parent="." instance=ExtResource( 1 )]
+[node name="Block29" parent="." index="8" instance=ExtResource( 1 )]
+
 position = Vector2( 2927.77, -181.656 )
 scale = Vector2( 1, 3.23745 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block26" parent="." instance=ExtResource( 1 )]
+[node name="Block26" parent="." index="9" instance=ExtResource( 1 )]
+
 position = Vector2( 3730.59, 331.145 )
 scale = Vector2( 1, 12.7866 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block30" parent="." instance=ExtResource( 1 )]
+[node name="Block30" parent="." index="10" instance=ExtResource( 1 )]
+
 position = Vector2( 2731.88, 730.567 )
 scale = Vector2( 1, 7.03313 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block32" parent="." instance=ExtResource( 1 )]
+[node name="Block32" parent="." index="11" instance=ExtResource( 1 )]
+
 position = Vector2( 2957.71, 1229.99 )
 scale = Vector2( 1, 8.55141 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block33" parent="." instance=ExtResource( 1 )]
+[node name="Block33" parent="." index="12" instance=ExtResource( 1 )]
+
 position = Vector2( 3385.3, 910.039 )
 scale = Vector2( 1, 5.15527 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block36" parent="." instance=ExtResource( 1 )]
+[node name="Block36" parent="." index="13" instance=ExtResource( 1 )]
+
 position = Vector2( 3919.05, 1342.95 )
 scale = Vector2( 1.27982, 5.15527 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block37" parent="." instance=ExtResource( 1 )]
+[node name="Block37" parent="." index="14" instance=ExtResource( 1 )]
+
 position = Vector2( 4591.05, 1559.95 )
 scale = Vector2( 1, 6.23404 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block38" parent="." instance=ExtResource( 1 )]
+[node name="Block38" parent="." index="15" instance=ExtResource( 1 )]
+
 position = Vector2( 4730.05, 1063.95 )
 scale = Vector2( 1, 14.9441 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block12" parent="." instance=ExtResource( 1 )]
+[node name="Block12" parent="." index="16" instance=ExtResource( 1 )]
+
 position = Vector2( 899.939, 774.123 )
 scale = Vector2( 1, 11.7078 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block4" parent="." instance=ExtResource( 1 )]
+[node name="Block4" parent="." index="17" instance=ExtResource( 1 )]
+
 position = Vector2( 652.457, -228.222 )
 scale = Vector2( 20.2679, 1.75914 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block5" parent="." instance=ExtResource( 1 )]
+[node name="Block5" parent="." index="18" instance=ExtResource( 1 )]
+
 position = Vector2( 1698.26, -799.024 )
 scale = Vector2( 5.07745, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block22" parent="." instance=ExtResource( 1 )]
+[node name="Block22" parent="." index="19" instance=ExtResource( 1 )]
+
 position = Vector2( 1798.26, -1149.02 )
 scale = Vector2( 14.1118, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block11" parent="." instance=ExtResource( 1 )]
+[node name="Block11" parent="." index="20" instance=ExtResource( 1 )]
+
 position = Vector2( 1979.32, 94.1553 )
 scale = Vector2( 10.2742, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block27" parent="." instance=ExtResource( 1 )]
+[node name="Block27" parent="." index="21" instance=ExtResource( 1 )]
+
 position = Vector2( 3328.47, -110.1 )
 scale = Vector2( 13.5122, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block28" parent="." instance=ExtResource( 1 )]
+[node name="Block28" parent="." index="22" instance=ExtResource( 1 )]
+
 position = Vector2( 2576.99, -256.09 )
 scale = Vector2( 10.2742, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block8" parent="." instance=ExtResource( 1 )]
+[node name="Block8" parent="." index="23" instance=ExtResource( 1 )]
+
 position = Vector2( 1380.92, 913.34 )
 scale = Vector2( 9.03497, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block13" parent="." instance=ExtResource( 1 )]
+[node name="Block13" parent="." index="24" instance=ExtResource( 1 )]
+
 position = Vector2( 1443.55, 1170.25 )
 scale = Vector2( 18.0293, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block9" parent="." instance=ExtResource( 1 )]
+[node name="Block9" parent="." index="25" instance=ExtResource( 1 )]
+
 position = Vector2( 1315.28, 625.306 )
 scale = Vector2( 7.35602, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Spikes" parent="." instance=ExtResource( 2 )]
+[node name="Spikes" parent="." index="26" instance=ExtResource( 2 )]
+
 position = Vector2( 1056.5, 321.729 )
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes5" parent="." instance=ExtResource( 2 )]
+[node name="Spikes5" parent="." index="27" instance=ExtResource( 2 )]
+
 position = Vector2( 1856.64, 148.552 )
 rotation = 3.14159
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes7" parent="." instance=ExtResource( 2 )]
+[node name="Spikes7" parent="." index="28" instance=ExtResource( 2 )]
+
 position = Vector2( 1933.2, 613.491 )
 rotation = -1.5708
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes8" parent="." instance=ExtResource( 2 )]
+[node name="Spikes8" parent="." index="29" instance=ExtResource( 2 )]
+
 position = Vector2( 1723.73, 785.5 )
 rotation = 1.5708
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes16" parent="." instance=ExtResource( 2 )]
+[node name="Spikes16" parent="." index="30" instance=ExtResource( 2 )]
+
 position = Vector2( 1723.73, -204.5 )
 rotation = 1.5708
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes17" parent="." instance=ExtResource( 2 )]
+[node name="Spikes17" parent="." index="31" instance=ExtResource( 2 )]
+
 position = Vector2( 1801.61, -1097.75 )
 rotation = 3.14159
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes18" parent="." instance=ExtResource( 2 )]
+[node name="Spikes18" parent="." index="32" instance=ExtResource( 2 )]
+
 position = Vector2( 2101.61, -1097.75 )
 rotation = 3.14159
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes19" parent="." instance=ExtResource( 2 )]
+[node name="Spikes19" parent="." index="33" instance=ExtResource( 2 )]
+
 position = Vector2( 1501.61, -1097.75 )
 rotation = 3.14159
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes6" parent="." instance=ExtResource( 2 )]
+[node name="Spikes6" parent="." index="34" instance=ExtResource( 2 )]
+
 position = Vector2( 2153.34, 148.552 )
 rotation = 3.14159
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes9" parent="." instance=ExtResource( 2 )]
+[node name="Spikes9" parent="." index="35" instance=ExtResource( 2 )]
+
 position = Vector2( 2074.68, 420.965 )
 scale = Vector2( 2.39172, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes10" parent="." instance=ExtResource( 2 )]
+[node name="Spikes10" parent="." index="36" instance=ExtResource( 2 )]
+
 position = Vector2( 2242.1, 419.019 )
 scale = Vector2( 2.39172, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes11" parent="." instance=ExtResource( 2 )]
+[node name="Spikes11" parent="." index="37" instance=ExtResource( 2 )]
+
 position = Vector2( 2465.26, 419.019 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes12" parent="." instance=ExtResource( 2 )]
+[node name="Spikes12" parent="." index="38" instance=ExtResource( 2 )]
+
 position = Vector2( 2685.26, 419.019 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes20" parent="." instance=ExtResource( 2 )]
+[node name="Spikes20" parent="." index="39" instance=ExtResource( 2 )]
+
 position = Vector2( 2784.55, 617.491 )
 rotation = 1.5708
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes21" parent="." instance=ExtResource( 2 )]
+[node name="Spikes21" parent="." index="40" instance=ExtResource( 2 )]
+
 position = Vector2( 2784.55, 837.491 )
 rotation = 1.5708
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes23" parent="." instance=ExtResource( 2 )]
+[node name="Spikes23" parent="." index="41" instance=ExtResource( 2 )]
+
 position = Vector2( 3331.55, 858.491 )
 rotation = -1.5708
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes24" parent="." instance=ExtResource( 2 )]
+[node name="Spikes24" parent="." index="42" instance=ExtResource( 2 )]
+
 position = Vector2( 3331.55, 1006.49 )
 rotation = -1.5708
 scale = Vector2( 2.75238, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes29" parent="." instance=ExtResource( 2 )]
+[node name="Spikes29" parent="." index="43" instance=ExtResource( 2 )]
+
 position = Vector2( 4676.55, 1465.49 )
 rotation = -1.5708
 scale = Vector2( 2.75238, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes30" parent="." instance=ExtResource( 2 )]
+[node name="Spikes30" parent="." index="44" instance=ExtResource( 2 )]
+
 position = Vector2( 4645.55, 1465.49 )
 rotation = 1.5708
 scale = Vector2( 2.75238, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes22" parent="." instance=ExtResource( 2 )]
+[node name="Spikes22" parent="." index="45" instance=ExtResource( 2 )]
+
 position = Vector2( 2875.5, 932.89 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes25" parent="." instance=ExtResource( 2 )]
+[node name="Spikes25" parent="." index="46" instance=ExtResource( 2 )]
+
 position = Vector2( 3098.31, 1420.86 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes26" parent="." instance=ExtResource( 2 )]
+[node name="Spikes26" parent="." index="47" instance=ExtResource( 2 )]
+
 position = Vector2( 3318.31, 1420.86 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes27" parent="." instance=ExtResource( 2 )]
+[node name="Spikes27" parent="." index="48" instance=ExtResource( 2 )]
+
 position = Vector2( 3538.31, 1420.86 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes28" parent="." instance=ExtResource( 2 )]
+[node name="Spikes28" parent="." index="49" instance=ExtResource( 2 )]
+
 position = Vector2( 3758.31, 1420.86 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes13" parent="." instance=ExtResource( 2 )]
+[node name="Spikes13" parent="." index="50" instance=ExtResource( 2 )]
+
 position = Vector2( 2905.26, 419.019 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes14" parent="." instance=ExtResource( 2 )]
+[node name="Spikes14" parent="." index="51" instance=ExtResource( 2 )]
+
 position = Vector2( 3125.26, 419.019 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes15" parent="." instance=ExtResource( 2 )]
+[node name="Spikes15" parent="." index="52" instance=ExtResource( 2 )]
+
 position = Vector2( 3345.26, 419.019 )
 scale = Vector2( 4.47043, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes4" parent="." instance=ExtResource( 2 )]
+[node name="Spikes4" parent="." index="53" instance=ExtResource( 2 )]
+
 position = Vector2( 1079.86, 1116.38 )
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes2" parent="." instance=ExtResource( 2 )]
+[node name="Spikes2" parent="." index="54" instance=ExtResource( 2 )]
+
 position = Vector2( 769.393, 322.144 )
 scale = Vector2( 6.02944, 1.91895 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="Spikes3" parent="." instance=ExtResource( 2 )]
+[node name="Spikes3" parent="." index="55" instance=ExtResource( 2 )]
+
 position = Vector2( 1452.08, 330.436 )
 scale = Vector2( 3.83822, 1.15982 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+[node name="KinematicBody2D" parent="." index="56" instance=ExtResource( 3 )]
+
 position = Vector2( 1465.94, 832.805 )
+input_pickable = false
+collision_layer = 1
+collision/safe_margin = 0.08
+max_explosion_count = 30
 
-[node name="KinematicBody2D3" parent="." instance=ExtResource( 3 )]
+[node name="KinematicBody2D3" parent="." index="57" instance=ExtResource( 3 )]
+
 position = Vector2( 1602.22, 480.614 )
+input_pickable = false
+collision_layer = 1
+collision/safe_margin = 0.08
+max_explosion_count = 30
 
-[node name="KinematicBody2D4" parent="." instance=ExtResource( 3 )]
+[node name="KinematicBody2D4" parent="." index="58" instance=ExtResource( 3 )]
+
 position = Vector2( 2902.68, 251.009 )
+input_pickable = false
+collision_layer = 1
+collision/safe_margin = 0.08
+max_explosion_count = 30
 
-[node name="Altar" parent="." instance=ExtResource( 4 )]
+[node name="Altar" parent="." index="59" instance=ExtResource( 4 )]
+
 position = Vector2( 1341.35, 560.392 )
 
-[node name="Altar2" parent="." instance=ExtResource( 4 )]
+[node name="Altar2" parent="." index="60" instance=ExtResource( 4 )]
+
 position = Vector2( 3038.96, 647.954 )
 
-[node name="Altar3" parent="." instance=ExtResource( 4 )]
+[node name="Altar3" parent="." index="61" instance=ExtResource( 4 )]
+
 position = Vector2( 4655.96, 1660.95 )
 
-[node name="Block14" parent="." instance=ExtResource( 1 )]
+[node name="Block14" parent="." index="62" instance=ExtResource( 1 )]
+
 position = Vector2( 1072.69, 597.363 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block18" parent="." instance=ExtResource( 1 )]
+[node name="Block18" parent="." index="63" instance=ExtResource( 1 )]
+
 position = Vector2( 2159, 412.511 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block20" parent="." instance=ExtResource( 1 )]
+[node name="Block20" parent="." index="64" instance=ExtResource( 1 )]
+
 position = Vector2( 2328.37, 412.565 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block25" parent="." instance=ExtResource( 1 )]
+[node name="Block25" parent="." index="65" instance=ExtResource( 1 )]
+
 position = Vector2( 2908.52, 330.841 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block19" parent="." instance=ExtResource( 1 )]
+[node name="Block19" parent="." index="66" instance=ExtResource( 1 )]
+
 position = Vector2( 2182, 472.831 )
 scale = Vector2( 5.51717, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block21" parent="." instance=ExtResource( 1 )]
+[node name="Block21" parent="." index="67" instance=ExtResource( 1 )]
+
 position = Vector2( 2911.69, 472.831 )
 scale = Vector2( 17.4697, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block24" parent="." instance=ExtResource( 1 )]
+[node name="Block24" parent="." index="68" instance=ExtResource( 1 )]
+
 position = Vector2( 3340.33, 713.126 )
 scale = Vector2( 13.1924, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block42" parent="." instance=ExtResource( 1 )]
+[node name="Block42" parent="." index="69" instance=ExtResource( 1 )]
+
 position = Vector2( 4068.33, 413.126 )
 scale = Vector2( 11.5934, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block34" parent="." instance=ExtResource( 1 )]
+[node name="Block34" parent="." index="70" instance=ExtResource( 1 )]
+
 position = Vector2( 3407.32, 1474.7 )
 scale = Vector2( 14.7514, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block31" parent="." instance=ExtResource( 1 )]
+[node name="Block31" parent="." index="71" instance=ExtResource( 1 )]
+
 position = Vector2( 2832.55, 987.377 )
 scale = Vector2( 4.11804, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block35" parent="." instance=ExtResource( 1 )]
+[node name="Block35" parent="." index="72" instance=ExtResource( 1 )]
+
 position = Vector2( 4260.17, 1392.42 )
 scale = Vector2( 9.39473, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block43" parent="." instance=ExtResource( 1 )]
+[node name="Block43" parent="." index="73" instance=ExtResource( 1 )]
+
 position = Vector2( 3857.63, 1180.39 )
 scale = Vector2( 3.23858, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block39" parent="." instance=ExtResource( 1 )]
+[node name="Block39" parent="." index="74" instance=ExtResource( 1 )]
+
 position = Vector2( 4776.55, 1727.38 )
 scale = Vector2( 6.87631, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block40" parent="." instance=ExtResource( 1 )]
+[node name="Block40" parent="." index="75" instance=ExtResource( 1 )]
+
 position = Vector2( 5261.31, 1600.9 )
 scale = Vector2( 6.87631, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block41" parent="." instance=ExtResource( 1 )]
+[node name="Block41" parent="." index="76" instance=ExtResource( 1 )]
+
 position = Vector2( 5767.48, 1474.42 )
 scale = Vector2( 6.87631, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block44" parent="." instance=ExtResource( 1 )]
+[node name="Block44" parent="." index="77" instance=ExtResource( 1 )]
+
 position = Vector2( 6213.29, 1342.11 )
 scale = Vector2( 6.87631, 1 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block15" parent="." instance=ExtResource( 1 )]
+[node name="Block15" parent="." index="78" instance=ExtResource( 1 )]
+
 position = Vector2( 1923.44, 914.529 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Block16" parent="." instance=ExtResource( 1 )]
+[node name="Block16" parent="." index="79" instance=ExtResource( 1 )]
+
 position = Vector2( 1734.6, 587.634 )
+input_pickable = false
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="Mob" parent="." instance=ExtResource( 5 )]
+[node name="Mob" parent="." index="80" instance=ExtResource( 5 )]
+
 position = Vector2( 4208.98, 1317.31 )
 
-[node name="Finish" parent="." instance=ExtResource( 6 )]
+[node name="Finish" parent="." index="81" instance=ExtResource( 6 )]
+
 position = Vector2( 6216.75, 1269.21 )
+_sections_unfolded = [ "Transform" ]
+next_level = null
+player_spawn_position = null
+
 

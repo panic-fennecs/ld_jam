@@ -26,8 +26,9 @@ func _physics_process(delta):
 	else:
 		current_position += acc
 
-	position = current_position
-	position += shake_offset
+	if GlobalState.level != 3:
+		position = current_position
+		position += shake_offset
 
 func offset_position(offset):
 	position += offset
