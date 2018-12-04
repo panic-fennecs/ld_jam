@@ -1,5 +1,7 @@
 extends Node
 
+signal strike
+
 var camera
 
 const MAX_THUNDER_BAR_SIZE = 160
@@ -20,7 +22,7 @@ func _process(delta):
 
 func begin_lightning():
 	spawn_thunder()
-
+	emit_signal("strike")
 	var elapsed_time = $Timer.wait_time - $Timer.time_left
 	#if elapsed_time > RAGE_WAIT_TIME:
 	var wait = 0.2 + ($RageTimer.time_left / $RageTimer.wait_time) * 5
