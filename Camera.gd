@@ -14,9 +14,9 @@ func _ready():
 	current_position = get_parent().get_node("Player").position
 
 func _physics_process(delta):
-	$FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
-	$DeathCounterLabel.text = str(global_state.death_count) + " deaths"
-	$DeathLabel.text = str(global_state.death_count) + " deaths"
+	$Node2D/FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
+	$Node2D/DeathCounterLabel.text = str(global_state.death_count) + " deaths"
+	$Labels/DeathLabel.text = str(global_state.death_count) + " deaths"
 	absolute_position.y = get_parent().get_node("Player").position.y - get_viewport().size.y / 2
 	absolute_position.x = get_parent().get_node("Player").position.x - get_viewport().size.x / 2
 

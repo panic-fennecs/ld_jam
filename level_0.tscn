@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Altar.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Mob2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Mob.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Finish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://NiceBlockDetail.tscn" type="PackedScene" id=7]
 
 [node name="level_0" type="Node2D" index="0"]
 
@@ -13,45 +14,21 @@
 
 position = Vector2( 697.937, 1108.85 )
 scale = Vector2( 61.9661, 16.6972 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block2" parent="." index="1" instance=ExtResource( 1 )]
 
 position = Vector2( 168.318, 415.809 )
 scale = Vector2( 3.55866, 5.83539 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block6" parent="." index="2" instance=ExtResource( 1 )]
 
 position = Vector2( 2098.15, 328.183 )
 scale = Vector2( 11.7144, 8.43292 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block3" parent="." index="3" instance=ExtResource( 1 )]
 
 position = Vector2( 1786.01, 491.386 )
 scale = Vector2( 19.1505, 3.07802 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Altar" parent="." index="4" instance=ExtResource( 2 )]
 
@@ -115,514 +92,232 @@ max_lines_visible = -1
 
 [node name="Block4" parent="." index="10" instance=ExtResource( 1 )]
 
-position = Vector2( -533.781, -36.8092 )
-scale = Vector2( 21.1095, 20.9011 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( -614.138, -1073.99 )
+scale = Vector2( 23.6207, 53.3129 )
 
 [node name="Block7" parent="." index="11" instance=ExtResource( 1 )]
 
 position = Vector2( 2323.33, 729.651 )
 scale = Vector2( 13.906, 19.6172 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block11" parent="." index="12" instance=ExtResource( 1 )]
 
 position = Vector2( 4203.73, 812.878 )
 scale = Vector2( 3.08261, 2.7483 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block12" parent="." index="13" instance=ExtResource( 1 )]
 
 position = Vector2( 4350.47, 686.736 )
 scale = Vector2( 3.08261, 2.7483 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block13" parent="." index="14" instance=ExtResource( 1 )]
 
 position = Vector2( 4491.34, 548.861 )
 scale = Vector2( 3.08261, 2.7483 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block14" parent="." index="15" instance=ExtResource( 1 )]
 
 position = Vector2( 6350.18, 353.442 )
 scale = Vector2( 2.53887, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block15" parent="." index="16" instance=ExtResource( 1 )]
 
 position = Vector2( 6698.68, 347.309 )
 scale = Vector2( 2.53887, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block19" parent="." index="17" instance=ExtResource( 1 )]
 
 position = Vector2( 7066.81, 608.568 )
 scale = Vector2( 2.53887, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block23" parent="." index="18" instance=ExtResource( 1 )]
 
-position = Vector2( 8358.7, -213.036 )
-scale = Vector2( 2.53887, 14.3764 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 9193.73, -566.496 )
+scale = Vector2( 28.6335, 25.422 )
 
 [node name="Block16" parent="." index="19" instance=ExtResource( 1 )]
 
 position = Vector2( 6523.2, 466.286 )
 scale = Vector2( 3.57834, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block18" parent="." index="20" instance=ExtResource( 1 )]
 
 position = Vector2( 6874.15, 462.606 )
 scale = Vector2( 3.57834, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block20" parent="." index="21" instance=ExtResource( 1 )]
 
 position = Vector2( 7534.59, 463.962 )
 scale = Vector2( 12.2139, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block24" parent="." index="22" instance=ExtResource( 1 )]
 
-position = Vector2( 7415.9, 1389.51 )
-scale = Vector2( 12.2139, 21.7294 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 7333.37, 1389.51 )
+scale = Vector2( 14.7929, 21.7294 )
 
 [node name="Block25" parent="." index="23" instance=ExtResource( 1 )]
 
-position = Vector2( 8597.87, 1390.55 )
-scale = Vector2( 12.2139, 21.7294 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 9473.51, 1207.95 )
+scale = Vector2( 39.5777, 27.4358 )
 
 [node name="Block26" parent="." index="24" instance=ExtResource( 1 )]
 
 position = Vector2( 8001.57, 1111.87 )
 scale = Vector2( 3.64803, 0.496922 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block28" parent="." index="25" instance=ExtResource( 1 )]
 
 position = Vector2( 7816.18, 1515.67 )
 scale = Vector2( 3.64803, 0.496922 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block22" parent="." index="26" instance=ExtResource( 1 )]
 
-position = Vector2( 8471.19, 463.962 )
-scale = Vector2( 12.2139, 7.46303 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 9160.17, 463.962 )
+scale = Vector2( 33.7446, 7.46303 )
 
 [node name="Block21" parent="." index="27" instance=ExtResource( 1 )]
 
 position = Vector2( 7666.34, 235.433 )
 scale = Vector2( 1.97412, 3.69768 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block17" parent="." index="28" instance=ExtResource( 1 )]
 
-position = Vector2( 5411.2, 674.711 )
-scale = Vector2( 26.8702, 11.2202 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 5735.68, 897.832 )
+scale = Vector2( 37.0101, 18.1927 )
 
 [node name="Block27" parent="." index="29" instance=ExtResource( 1 )]
 
 position = Vector2( 7993.15, 2522.24 )
 scale = Vector2( 13.877, 3.98712 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block29" parent="." index="30" instance=ExtResource( 1 )]
 
-position = Vector2( 8232.52, 3877.76 )
-scale = Vector2( 10.0432, 1.74428 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 8232.52, 4625.97 )
+scale = Vector2( 10.0432, 25.1259 )
 
 [node name="Block33" parent="." index="31" instance=ExtResource( 1 )]
 
-position = Vector2( 6289.18, 3887.7 )
-scale = Vector2( 35.7498, 1.74428 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 6289.18, 4640.94 )
+scale = Vector2( 35.7498, 25.2831 )
 
 [node name="Block32" parent="." index="32" instance=ExtResource( 1 )]
 
-position = Vector2( 7659.1, 3983.77 )
-scale = Vector2( 9.20367, 1.74428 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 7659.1, 4688.98 )
+scale = Vector2( 9.20367, 23.782 )
 
 [node name="Block30" parent="." index="33" instance=ExtResource( 1 )]
 
-position = Vector2( 9212.88, 3841.73 )
-scale = Vector2( 10.0121, 7.54913 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 9821.25, 4655.08 )
+scale = Vector2( 29.0235, 32.9663 )
 
 [node name="Block31" parent="." index="34" instance=ExtResource( 1 )]
 
 position = Vector2( 9143.41, 2245.79 )
 scale = Vector2( 15.9819, 6.98433 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block38" parent="." index="35" instance=ExtResource( 1 )]
 
 position = Vector2( 8778.13, 3117.84 )
 scale = Vector2( 5.42743, 4.46673 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block39" parent="." index="36" instance=ExtResource( 1 )]
 
-position = Vector2( 8767.34, 3974.24 )
-scale = Vector2( 5.42743, 2.30879 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 8767.34, 4755.18 )
+scale = Vector2( 5.42743, 26.7131 )
 
 [node name="Block34" parent="." index="37" instance=ExtResource( 1 )]
 
 position = Vector2( 9013.24, 3035.76 )
 scale = Vector2( 3.82828, 6.98433 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block37" parent="." index="38" instance=ExtResource( 1 )]
 
 position = Vector2( 8549.5, 3028.59 )
 scale = Vector2( 3.82828, 6.98433 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block43" parent="." index="39" instance=ExtResource( 1 )]
 
 position = Vector2( 6097.14, 3828.41 )
 scale = Vector2( 1.5095, 6.98433 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block44" parent="." index="40" instance=ExtResource( 1 )]
 
-position = Vector2( 4907.96, 4067.32 )
-scale = Vector2( 9.11605, 4.3108 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 4907.96, 4689.69 )
+scale = Vector2( 9.11605, 23.7598 )
 
 [node name="Block45" parent="." index="41" instance=ExtResource( 1 )]
 
-position = Vector2( 4006.49, 3826.92 )
-scale = Vector2( 19.937, 9.73675 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 4006.49, 4537.67 )
+scale = Vector2( 19.937, 31.9477 )
 
 [node name="Block53" parent="." index="42" instance=ExtResource( 1 )]
 
-position = Vector2( 2797.29, 4344.75 )
-scale = Vector2( 28.5724, 7.65873 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 2797.29, 4864.83 )
+scale = Vector2( 28.5724, 23.9114 )
 
 [node name="Block54" parent="." index="43" instance=ExtResource( 1 )]
 
 position = Vector2( 2778.76, 3810.54 )
 scale = Vector2( 6.05433, 1.32537 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block47" parent="." index="44" instance=ExtResource( 1 )]
 
 position = Vector2( 2605.12, 3989.39 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block48" parent="." index="45" instance=ExtResource( 1 )]
 
 position = Vector2( 2946.44, 3988.69 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block49" parent="." index="46" instance=ExtResource( 1 )]
 
 position = Vector2( 3120.72, 3788.85 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block50" parent="." index="47" instance=ExtResource( 1 )]
 
 position = Vector2( 2421.74, 3778.06 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block51" parent="." index="48" instance=ExtResource( 1 )]
 
 position = Vector2( 2527.45, 3614.18 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block52" parent="." index="49" instance=ExtResource( 1 )]
 
 position = Vector2( 3012.86, 3616.33 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block46" parent="." index="50" instance=ExtResource( 1 )]
 
-position = Vector2( 1853.71, 3042.24 )
-scale = Vector2( 10.264, 45.7042 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 416.079, 3649.85 )
+scale = Vector2( 55.19, 64.6921 )
 
 [node name="Block41" parent="." index="51" instance=ExtResource( 1 )]
 
 position = Vector2( 7813.27, 2866.85 )
 scale = Vector2( 19.3802, 6.98433 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block42" parent="." index="52" instance=ExtResource( 1 )]
 
-position = Vector2( 7211.27, 2382.06 )
-scale = Vector2( 3.82828, 9.50194 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 7061.89, 2470 )
+scale = Vector2( 8.49649, 15.625 )
 
 [node name="Block40" parent="." index="53" instance=ExtResource( 1 )]
 
 position = Vector2( 8548.21, 3829.11 )
 scale = Vector2( 3.82828, 6.98433 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Block35" parent="." index="54" instance=ExtResource( 1 )]
 
-position = Vector2( 9415.73, 2746.38 )
-scale = Vector2( 3.82828, 27.4049 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 10026.6, 2316.67 )
+scale = Vector2( 22.9184, 40.8334 )
 
 [node name="Block10" parent="." index="55" instance=ExtResource( 1 )]
 
-position = Vector2( 3585.69, 970.141 )
-scale = Vector2( 25.7786, 2.38359 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+position = Vector2( 3355, 1376.93 )
+scale = Vector2( 40.1562, 15.0958 )
 
 [node name="Block9" parent="." index="56" instance=ExtResource( 1 )]
 
 position = Vector2( 3474.79, 202.09 )
 scale = Vector2( 13.906, 8.10818 )
-input_pickable = false
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
 [node name="Spikes2" parent="." index="57" instance=ExtResource( 3 )]
 
@@ -1476,7 +1171,7 @@ max_explosion_count = 30
 
 [node name="KinematicBody2D6" parent="." index="125" instance=ExtResource( 4 )]
 
-position = Vector2( 8393.3, 2352.86 )
+position = Vector2( 8350, 2350 )
 input_pickable = false
 collision_layer = 1
 collision/safe_margin = 0.08
@@ -1500,5 +1195,221 @@ position = Vector2( 2778.86, 3731.52 )
 _sections_unfolded = [ "Transform" ]
 next_level = "res://Terrain.tscn"
 player_spawn_position = Vector2( 141, 208 )
+
+[node name="NiceBlockDetail" parent="." index="129" instance=ExtResource( 7 )]
+
+position = Vector2( 250, 360 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail2" parent="." index="130" instance=ExtResource( 7 )]
+
+position = Vector2( 240, 270 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail3" parent="." index="131" instance=ExtResource( 7 )]
+
+position = Vector2( 980, 610 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail4" parent="." index="132" instance=ExtResource( 7 )]
+
+position = Vector2( 1080, 620 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail5" parent="." index="133" instance=ExtResource( 7 )]
+
+position = Vector2( 3070, 420 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail6" parent="." index="134" instance=ExtResource( 7 )]
+
+position = Vector2( 3210, 940 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail9" parent="." index="135" instance=ExtResource( 7 )]
+
+position = Vector2( 3370, 910 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail10" parent="." index="136" instance=ExtResource( 7 )]
+
+position = Vector2( 3410, 1000 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail14" parent="." index="137" instance=ExtResource( 7 )]
+
+position = Vector2( 3600, 990 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail17" parent="." index="138" instance=ExtResource( 7 )]
+
+position = Vector2( 4290, 640 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail19" parent="." index="139" instance=ExtResource( 7 )]
+
+position = Vector2( 5180, 360 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail26" parent="." index="140" instance=ExtResource( 7 )]
+
+position = Vector2( 6560, 270 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail30" parent="." index="141" instance=ExtResource( 7 )]
+
+position = Vector2( 8250, 1480 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail33" parent="." index="142" instance=ExtResource( 7 )]
+
+position = Vector2( 8350, 3860 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail27" parent="." index="143" instance=ExtResource( 7 )]
+
+position = Vector2( 7650, 160 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail20" parent="." index="144" instance=ExtResource( 7 )]
+
+position = Vector2( 5090, 400 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail7" parent="." index="145" instance=ExtResource( 7 )]
+
+position = Vector2( 3290, 920 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail8" parent="." index="146" instance=ExtResource( 7 )]
+
+position = Vector2( 3330, 990 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail11" parent="." index="147" instance=ExtResource( 7 )]
+
+position = Vector2( 3450, 920 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail12" parent="." index="148" instance=ExtResource( 7 )]
+
+position = Vector2( 3520, 930 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail13" parent="." index="149" instance=ExtResource( 7 )]
+
+position = Vector2( 3610, 910 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail15" parent="." index="150" instance=ExtResource( 7 )]
+
+position = Vector2( 3680, 920 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail16" parent="." index="151" instance=ExtResource( 7 )]
+
+position = Vector2( 4370, 630 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail21" parent="." index="152" instance=ExtResource( 7 )]
+
+position = Vector2( 5040, 480 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail22" parent="." index="153" instance=ExtResource( 7 )]
+
+position = Vector2( 5260, 350 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail23" parent="." index="154" instance=ExtResource( 7 )]
+
+position = Vector2( 5290, 420 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail24" parent="." index="155" instance=ExtResource( 7 )]
+
+position = Vector2( 5720, 350 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail25" parent="." index="156" instance=ExtResource( 7 )]
+
+position = Vector2( 6480, 260 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail28" parent="." index="157" instance=ExtResource( 7 )]
+
+position = Vector2( 6480, 260 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail29" parent="." index="158" instance=ExtResource( 7 )]
+
+position = Vector2( 8240, 1560 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail31" parent="." index="159" instance=ExtResource( 7 )]
+
+position = Vector2( 7640, 2430 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail34" parent="." index="160" instance=ExtResource( 7 )]
+
+position = Vector2( 8270, 3850 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail35" parent="." index="161" instance=ExtResource( 7 )]
+
+position = Vector2( 8200, 3850 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail36" parent="." index="162" instance=ExtResource( 7 )]
+
+position = Vector2( 8220, 3920 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail32" parent="." index="163" instance=ExtResource( 7 )]
+
+position = Vector2( 8350, 2430 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="NiceBlockDetail18" parent="." index="164" instance=ExtResource( 7 )]
+
+position = Vector2( 4280, 720 )
+scale = Vector2( 0.15, 0.15 )
+_sections_unfolded = [ "Transform" ]
 
 
