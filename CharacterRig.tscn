@@ -16,6 +16,8 @@
 
 resource_name = "Base"
 length = 0.1
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperArm/LeftLowerArm:position")
 tracks/0/interp = 1
@@ -260,6 +262,8 @@ tracks/19/keys = {
 [sub_resource type="Animation" id=2]
 
 length = 0.5
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperLeg:rotation_degrees")
 tracks/0/interp = 1
@@ -529,6 +533,8 @@ tracks/21/keys = {
 
 resource_name = "CarryBase"
 length = 0.1
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperArm/LeftLowerArm:position")
 tracks/0/interp = 1
@@ -774,6 +780,8 @@ tracks/19/keys = {
 
 resource_name = "CarryMove"
 length = 0.6
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperArm/LeftLowerArm:position")
 tracks/0/interp = 1
@@ -1042,6 +1050,9 @@ tracks/21/keys = {
 [sub_resource type="Animation" id=5]
 
 resource_name = "CarryThrow"
+length = 1.0
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperArm/LeftLowerArm:position")
 tracks/0/interp = 1
@@ -1310,6 +1321,8 @@ tracks/21/keys = {
 [sub_resource type="Animation" id=6]
 
 length = 0.5
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/Head:rotation_degrees")
 tracks/0/interp = 1
@@ -1554,6 +1567,9 @@ tracks/19/keys = {
 [sub_resource type="Animation" id=7]
 
 resource_name = "Dying"
+length = 1.0
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperArm/LeftLowerArm:position")
 tracks/0/interp = 1
@@ -1800,6 +1816,7 @@ tracks/19/keys = {
 resource_name = "EndScreen"
 length = 0.8
 loop = true
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperLeg:position")
 tracks/0/interp = 1
@@ -2140,6 +2157,7 @@ tracks/27/keys = {
 [sub_resource type="Animation" id=9]
 
 length = 0.5
+loop = false
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/LeftUpperArm/LeftLowerArm:position")
@@ -2410,6 +2428,7 @@ tracks/21/keys = {
 
 length = 0.6
 loop = true
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Base/Body/Head:position")
 tracks/0/interp = 1
@@ -2675,10 +2694,17 @@ tracks/21/keys = {
 "values": [ -52.9783, 49.8572, -52.9783, -52.9783 ]
 }
 
-[node name="CharacterSprite" type="Node2D"]
+[node name="CharacterSprite" type="Node2D" index="0"]
+
 scale = Vector2( 0.05, 0.05 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
 anims/Base = SubResource( 1 )
 anims/Carry = SubResource( 2 )
 anims/CarryBase = SubResource( 3 )
@@ -2689,10 +2715,12 @@ anims/Dying = SubResource( 7 )
 anims/EndScreen = SubResource( 8 )
 anims/Jump = SubResource( 9 )
 anims/Move = SubResource( 10 )
+blend_times = [  ]
 
-[node name="Base" type="Node2D" parent="."]
+[node name="Base" type="Node2D" parent="." index="1"]
 
-[node name="Body" type="Sprite" parent="Base"]
+[node name="Body" type="Sprite" parent="Base" index="0"]
+
 position = Vector2( 47.5906, 193.969 )
 rotation = 0.0179153
 texture = ExtResource( 1 )
@@ -2701,7 +2729,8 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Head" type="Sprite" parent="Base/Body"]
+[node name="Head" type="Sprite" parent="Base/Body" index="0"]
+
 position = Vector2( 15.7856, -695.427 )
 rotation = 0.0714531
 texture = ExtResource( 2 )
@@ -2710,7 +2739,8 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="RightUpperArm" type="Sprite" parent="Base/Body"]
+[node name="RightUpperArm" type="Sprite" parent="Base/Body" index="1"]
+
 position = Vector2( -209.73, -472.532 )
 rotation = -0.000852738
 texture = ExtResource( 3 )
@@ -2719,7 +2749,8 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="RghtLowerArm" type="Sprite" parent="Base/Body/RightUpperArm"]
+[node name="RghtLowerArm" type="Sprite" parent="Base/Body/RightUpperArm" index="0"]
+
 position = Vector2( -49.9739, 283.721 )
 rotation = 0.449824
 texture = ExtResource( 4 )
@@ -2728,16 +2759,18 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="BoneDisplay2" type="Node2D" parent="Base/Body/RightUpperArm/RghtLowerArm"]
+[node name="BoneDisplay2" type="Node2D" parent="Base/Body/RightUpperArm/RghtLowerArm" index="0"]
+
 position = Vector2( 402.73, 179.036 )
 rotation = 6.69055
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="LeftUpperArm" type="Sprite" parent="Base/Body"]
+[node name="LeftUpperArm" type="Sprite" parent="Base/Body" index="2"]
+
 position = Vector2( 76.5807, -524.729 )
-rotation = -1.37343
+rotation = -1.38471
 z_index = -1
 texture = ExtResource( 5 )
 offset = Vector2( -3.13086, 80.8967 )
@@ -2745,9 +2778,10 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="LeftLowerArm" type="Sprite" parent="Base/Body/LeftUpperArm"]
+[node name="LeftLowerArm" type="Sprite" parent="Base/Body/LeftUpperArm" index="0"]
+
 position = Vector2( 38.5303, 202.188 )
-rotation = 0.0864887
+rotation = 0.271984
 z_index = -2
 texture = ExtResource( 6 )
 offset = Vector2( 131.74, 123.603 )
@@ -2755,14 +2789,16 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="BoneDisplay" type="Node2D" parent="Base/Body/LeftUpperArm/LeftLowerArm"]
+[node name="BoneDisplay" type="Node2D" parent="Base/Body/LeftUpperArm/LeftLowerArm" index="0"]
+
 position = Vector2( 378.758, 34.4166 )
-rotation = -5.58544
+rotation = -5.75965
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="RightUpperLeg" type="Sprite" parent="Base/Body"]
+[node name="RightUpperLeg" type="Sprite" parent="Base/Body" index="3"]
+
 position = Vector2( -99.4307, 110.383 )
 rotation = 0.0936172
 scale = Vector2( 1, 1.09383 )
@@ -2773,7 +2809,8 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="RightLowerLeg" type="Sprite" parent="Base/Body/RightUpperLeg"]
+[node name="RightLowerLeg" type="Sprite" parent="Base/Body/RightUpperLeg" index="0"]
+
 position = Vector2( 68.865, 230.327 )
 rotation = 0.205397
 texture = ExtResource( 8 )
@@ -2782,14 +2819,16 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="BoneDisplay2" type="Node2D" parent="Base/Body/RightUpperLeg/RightLowerLeg"]
+[node name="BoneDisplay2" type="Node2D" parent="Base/Body/RightUpperLeg/RightLowerLeg" index="0"]
+
 position = Vector2( -21.1891, 410.352 )
 rotation = -0.433953
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="LeftUpperLeg" type="Sprite" parent="Base/Body"]
+[node name="LeftUpperLeg" type="Sprite" parent="Base/Body" index="4"]
+
 position = Vector2( 202.763, 171.03 )
 rotation = -1.32827
 scale = Vector2( 1.09644, 1.12851 )
@@ -2800,7 +2839,8 @@ __meta__ = {
 "_edit_ik_": true
 }
 
-[node name="LeftLowerLeg" type="Sprite" parent="Base/Body/LeftUpperLeg"]
+[node name="LeftLowerLeg" type="Sprite" parent="Base/Body/LeftUpperLeg" index="0"]
+
 position = Vector2( 47.6757, 158.846 )
 rotation = 1.14484
 texture = ExtResource( 10 )
@@ -2809,15 +2849,18 @@ __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="BoneDisplay2" type="Node2D" parent="Base/Body/LeftUpperLeg/LeftLowerLeg"]
+[node name="BoneDisplay2" type="Node2D" parent="Base/Body/LeftUpperLeg/LeftLowerLeg" index="0"]
+
 position = Vector2( -31.7837, 402.41 )
 rotation = -1.48884
 __meta__ = {
 "_edit_bone_": true
 }
 
-[node name="Complete" type="Sprite" parent="Base"]
+[node name="Complete" type="Sprite" parent="Base" index="1"]
+
 visible = false
 position = Vector2( 0, -1 )
 texture = ExtResource( 11 )
+
 

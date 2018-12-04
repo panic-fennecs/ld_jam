@@ -32,7 +32,7 @@ func _physics_process(delta):
 			call_deferred("restart")
 		return
 	
-	var dir = (Input.is_action_pressed("ui_right") as int) - (Input.is_action_pressed("ui_left") as int)
+	var dir = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	var new_looks_right = looks_right
 	if dir == -1:
 		new_looks_right = false
@@ -138,7 +138,13 @@ func collides_direction(x):
 	return false
 
 func is_grounded():
-	return collides_direction(Vector2(0, -1))
+	#return collides_direction(Vector2(0, -1))
+	var bodies = $Area2D.get_overlapping_bodies()
+	for b in bodies:
+		if b.name.begins_with("Block"):
+			return true
+		
+	return false
 
 func restart():
 	get_tree().change_scene("res://Main.tscn")
@@ -171,7 +177,8 @@ func update_healthbar():
 	get_node("HealthBar/MainSprite").region_rect.size.x = 160 * perc
 
 func look_direction():
-	return (looks_right as int) * 2 - 1
+	var x = int(looks_right) * 2 - 1
+	return x
 
 func try_damage(b):
 	if b.has_method("damage") and b.name != "Player" and dash_counter > 0:
@@ -204,9 +211,10 @@ func carry_anim(x):
 		return x
 
 func uncarry_anim(x):
-	return x.trim_prefix("Carry")
+	return str(x).replace("Carry", "")
 
 func set_anim(x):
 	if x != anim:
 		anim = x
 		$CharacterSprite/AnimationPlayer.play(x)
+		print(str(x))
