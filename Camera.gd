@@ -13,7 +13,7 @@ func _ready():
 	var viewport_size = get_viewport().size
 	current_position = get_parent().get_node("Player").position
 
-func _process(delta):
+func _physics_process(delta):
 	$FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
 	$DeathCounterLabel.text = str(global_state.death_count) + " deaths"
 	$DeathLabel.text = str(global_state.death_count) + " deaths"
