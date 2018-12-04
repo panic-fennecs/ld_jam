@@ -21,7 +21,10 @@ func _process(delta):
 	absolute_position.x = get_parent().get_node("Player").position.x - get_viewport().size.x / 2
 
 	var acc = absolute_position - current_position
-	current_position += acc * 0.2
+	if acc.length() < 500:
+		current_position += acc * 0.2
+	else:
+		current_position += acc
 
 	position = current_position
 	position += shake_offset
