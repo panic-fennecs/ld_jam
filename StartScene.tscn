@@ -65,7 +65,7 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 
-[node name="StartScene" type="Node2D"]
+[node name="StartScene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -134,7 +134,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Demon Sacrifice"
+text = "Tributes of Cronus"
 align = 1
 valign = 1
 percent_visible = 1.0

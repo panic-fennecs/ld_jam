@@ -11,8 +11,7 @@ func _ready():
 	self.append_bbcode("[center] cap [/center] \n\n\n\n\n")
 	
 	self.append_bbcode("[center] special thanks to [/center] \n\n\n\n")
-	self.append_bbcode("[center] the Godot - Community on discord [/center] \n\n")
-	self.append_bbcode("[center] for letting us know that \n the dev version of Godot is broken[/center] \n\n\n\n")
+	self.append_bbcode("[center] Godot [/center] \n\n")
 	self.append_bbcode("[center] AMRPHIS [/center] \n\n")
 	self.append_bbcode("[center] for the demonic background music [/center] \n")
 	self.append_bbcode("[center] just check him out on youtube [/center] \n")
