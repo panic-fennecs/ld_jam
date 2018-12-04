@@ -211,4 +211,3 @@ func set_anim(x):
 	if x != anim:
 		anim = x
 		$CharacterSprite/AnimationPlayer.play(x)
-		print(str(x))
