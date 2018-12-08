@@ -21,7 +21,7 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 6 )
 
-[node name="Camera" type="Camera2D"]
+[node name="Camera" type="Camera2D" index="0"]
 
 anchor_mode = 0
 rotating = false
@@ -174,7 +174,5 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[connection signal="timeout" from="ShakeTimer" to="." method="_on_ShakeTimer_timeout"]
 
 

@@ -191,9 +191,9 @@ func set_correct_anim(dir):
 		set_anim("Dash")
 	elif !is_grounded():
 		if can_jump:
-			set_anim(carrystr + "Jump")
+			set_anim("Jump")
 		elif is_double_jump:
-			set_anim(carrystr + "Jump") #todo add double jump anim if you want to baby <3
+			set_anim("Jump") #todo add double jump anim if you want to baby <3
 	elif !walking and dash_counter == 0:
 		set_anim(carrystr + "Base")
 

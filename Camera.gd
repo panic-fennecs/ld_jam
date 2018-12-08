@@ -17,8 +17,7 @@ func _physics_process(delta):
 	$Node2D/FpsCounterLabel.text = str(Engine.get_frames_per_second()) + " FPS"
 	$Node2D/DeathCounterLabel.text = str(global_state.death_count) + " deaths"
 	$Labels/DeathLabel.text = str(global_state.death_count) + " deaths"
-	absolute_position.y = get_parent().get_node("Player").position.y - get_viewport().size.y / 2
-	absolute_position.x = get_parent().get_node("Player").position.x - get_viewport().size.x / 2
+	absolute_position = (get_parent().get_node("Player").position - get_viewport().size / 2)
 
 	var acc = absolute_position - current_position
 	if acc.length() < 500:
@@ -29,13 +28,10 @@ func _physics_process(delta):
 	if GlobalState.level != 3:
 		position = current_position
 		position += shake_offset
+		
 
 func offset_position(offset):
 	position += offset
 
 func _on_God_strike():
 	$ShakeTimer.start()
-
-func _on_ShakeTimer_timeout():
-	position.x = 0
-	
