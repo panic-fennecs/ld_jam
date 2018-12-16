@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 AudioplayerSingleton="*res://AudioPlayer.gd"
 AudioPlayerScene="*res://AudioPlayer.tscn"
 GlobalState="*res://GlobalState.gd"
+GeneticAlgorithm="*res://GeneticAlgorithm.gd"
 
 [display]
 

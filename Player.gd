@@ -16,11 +16,19 @@ var dead = false
 var is_double_jump = false
 var global_state
 
+var altar
+var genetic_algo
+var frame_count = 0
+
+		
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	genetic_algo = get_node("/root/GeneticAlgorithm")
 	global_state = get_node("/root/GlobalState")
 	set_anim("Base")
 	set_position(global_state.checkpoint_position)
+	print(genetic_algo.current_string)
+	print(str(altar))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -31,7 +39,13 @@ func _physics_process(delta):
 			call_deferred("restart")
 		return
 	
-	var dir = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	if frame_count >= genetic_algo.GENE_SIZE:
+		genetic_algo.current_string += 1
+		
+		restart()
+		return
+	
+	var dir = genetic_algo.population[genetic_algo.current_string][frame_count].dir#int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
 	var new_looks_right = looks_right
 	if dir == -1:
 		new_looks_right = false
@@ -72,13 +86,17 @@ func _physics_process(delta):
 		can_dash = true
 		can_jump = true
 		is_double_jump = false
+		
+	frame_count+=1
+	
+	#print("dist: ",str(abs(position.x - altar.position.x) + abs(position.y - altar.y)))
 	
 func jump():
 	set_anim(carry_anim("Jump"))
 	velocity.y = -1500
 
 func try_jump():
-	if Input.is_action_just_pressed("ui_up"):
+	if genetic_algo.population[genetic_algo.current_string][frame_count].jump:#Input.is_action_just_pressed("ui_up"):
 		if is_grounded():
 			jump()
 			AudioPlayerScene.play_jump_sound()
@@ -90,7 +108,8 @@ func try_jump():
 
 
 func try_dash():
-	if Input.is_action_just_pressed("dash") and can_dash:
+	#if Input.is_action_just_pressed("dash") and can_dash:
+	if genetic_algo.population[genetic_algo.current_string][frame_count].dash and can_dash:
 		dash_counter = MAX_DASH_COUNTER
 		var dash_dir = look_direction()
 		velocity.x = dash_dir * 2000
