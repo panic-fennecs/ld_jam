@@ -8,171 +8,69 @@
 [ext_resource path="res://fonts/Jovanny Lemonad - Bender.otf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 64
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=2]
-
 size = 48
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 6 )
 
-[node name="Camera" type="Camera2D" index="0"]
-
+[node name="Camera" type="Camera2D"]
 anchor_mode = 0
-rotating = false
 current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
 script = ExtResource( 1 )
 
-[node name="ShakeTimer" type="Timer" parent="." index="0"]
-
-process_mode = 1
-wait_time = 1.0
+[node name="ShakeTimer" type="Timer" parent="."]
 one_shot = true
-autostart = false
 
-[node name="ThunderBar" parent="." index="1" instance=ExtResource( 2 )]
-
+[node name="ThunderBar" parent="." instance=ExtResource( 2 )]
 z_index = 1
-_sections_unfolded = [ "Z Index" ]
 
-[node name="BackgroundImage" type="Sprite" parent="." index="2"]
-
+[node name="BackgroundImage" type="Sprite" parent="."]
 z_index = -12
 texture = ExtResource( 3 )
 centered = false
-_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="GodImage" type="Sprite" parent="." index="3"]
-
-editor/display_folded = true
+[node name="GodImage" type="Sprite" parent="."]
 z_index = -11
 texture = ExtResource( 4 )
 centered = false
 script = ExtResource( 5 )
 
-[node name="Timer" type="Timer" parent="GodImage" index="0"]
+[node name="Timer" type="Timer" parent="GodImage"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
-
-[node name="Labels" type="Node2D" parent="." index="4"]
-
+[node name="Labels" type="Node2D" parent="."]
 visible = false
 position = Vector2( 2, 230 )
 z_index = 2
-_sections_unfolded = [ "Z Index" ]
 
-[node name="DeathLabel" type="Label" parent="Labels" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="DeathLabel" type="Label" parent="Labels"]
 margin_right = 1279.0
 margin_bottom = 194.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 text = "0 deaths"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="ContinueLabel" type="Label" parent="Labels" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ContinueLabel" type="Label" parent="Labels"]
 margin_top = 174.0
 margin_right = 1277.0
 margin_bottom = 368.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 2 )
 text = "jump to continue"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Node2D" type="Node2D" parent="." index="5"]
-
+[node name="Node2D" type="Node2D" parent="."]
 z_index = 1
-_sections_unfolded = [ "Z Index" ]
 
-[node name="DeathCounterLabel" type="Label" parent="Node2D" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="DeathCounterLabel" type="Label" parent="Node2D"]
 margin_top = 20.0
 margin_right = 40.0
 margin_bottom = 34.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="FpsCounterLabel" type="Label" parent="Node2D" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FpsCounterLabel" type="Label" parent="Node2D"]
 margin_right = 40.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-

@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/mob2_attack.png-b86201354d8a7983c14c89eb5751b9a3.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

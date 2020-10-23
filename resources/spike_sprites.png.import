@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/spike_sprites.png-4ba181105bd59e68b17c6d3d37a8a95e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

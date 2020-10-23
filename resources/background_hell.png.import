@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/background_hell.png-5f7754db26cb1a090ad3303d60f7bc8e.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

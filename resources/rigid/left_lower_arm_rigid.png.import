@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/left_lower_arm_rigid.png-30d802327b35ff736db6aee20b8fae0a.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

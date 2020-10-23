@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/thunder_bar.png-ecb1fbb7d54a57576446b27931ecc67b.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
